@@ -28,8 +28,8 @@ public class App extends Application {
 	private long nanosPerStep = 1000_000_000L / 60L;
 	private long timeBudget = nanosPerStep;
 	private long lastUpdateTime = 0L;
-	
-	private IScene scene;
+	private Scene scene;
+	private IScene gameScene;
 
 
 
@@ -39,10 +39,10 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		double width = 500;
-		double height = 500;
+		double width = 1000;
+		double height = 600;
 		Group root = new Group();
-		Scene scene = new Scene(root, width, height, Color.BLACK);
+		scene = new Scene(root, width, height, Color.BLACK);
 		stage.setScene(scene);
 
 		canvas = new Canvas(width, height);
@@ -81,18 +81,20 @@ public class App extends Application {
 	}
 
 	private void setup() {
-		scene = new Game();
+		gameScene = new Game(this);
 	}
 	
 	private int stepCount = 0;
 
 	protected void step() {
-		scene.step(stepCount);
+		gameScene.step(stepCount);
 		stepCount++;
 	}
 
 	protected void draw() {
-		scene.draw(canvas);
-		
+		gameScene.draw(canvas);	
+	}
+	public Scene getScene() {
+		return scene;
 	}
 }
