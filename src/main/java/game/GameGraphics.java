@@ -15,7 +15,12 @@ public class GameGraphics {
 		double playerPosY = 300;
 		double offsettX = player.getX() - playerPosX;
 		double offsettY = player.getY() - playerPosY;
-		context.drawImage(obj.getSprite(),obj.getX()-obj.getWidth()/2-offsettX,obj.getY()-obj.getHeight()/2-offsettY,obj.getWidth(), obj.getHeight());
+		if (obj.getSprite() != null) {
+			context.drawImage(obj.getSprite(),obj.getX()-obj.getWidth()/2-offsettX,obj.getY()-obj.getHeight()/2-offsettY,obj.getWidth(), obj.getHeight());
+		}else {
+			context.setFill(Color.RED);
+			context.fillOval(obj.getX()-obj.getWidth()/2-offsettX, obj.getY()-obj.getHeight()/2-offsettY, obj.getWidth(), obj.getHeight());
+		}
 	}
 	
 	
@@ -24,9 +29,15 @@ public class GameGraphics {
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		
 		Image playerSprite = player.getSprite();
-		double w = player.getWidth()*player.direction;
+		double w = player.getWidth();
 		double h = player.getHeight();
-		context.drawImage(playerSprite,500-w/2,300-h/2,w, h);
+		context.drawImage(playerSprite,500-w/2*player.direction,300-h/2,w*player.direction, h);
+		
+		{
+			context.setFill(Color.RED);
+			context.fillOval(500-player.getHitBox().getR()/2,300-player.getHitBox().getR()/2, player.getHitBox().getR(), player.getHitBox().getR());
+		}
+		
 		
 		for(IGameObject obj : gameObjects) {
 			cameraView(context, player, obj);

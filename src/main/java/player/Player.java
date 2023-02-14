@@ -1,6 +1,7 @@
 package player;
 
 
+import collision.SphereHitBox;
 import javafx.scene.image.Image;
 import objects.IGameCharacter;
 
@@ -19,9 +20,13 @@ public class Player implements IGameCharacter{
 
 	private PlayerState state = PlayerState.idle;
 	private int frameCount = 0; 
+	
+	private SphereHitBox hb;
+	
 	public Player(double x, double y) {
 		this.x = x;
 		this.y = y;
+		this.hb = new SphereHitBox(this, this.h);
 	}
 	
 	@Override
@@ -86,11 +91,9 @@ public class Player implements IGameCharacter{
 	}
 	
 	public void moveLeft(boolean move) {
-		this.direction = -1;
 		this.moveLeft = move;
 	}
 	public void moveRight(boolean move) {
-		this.direction = 1;
 		this.moveRight = move;
 	}
 	
@@ -100,5 +103,10 @@ public class Player implements IGameCharacter{
 	
 	public boolean isGrounded() {
 		return this.grounded;
+	}
+
+	@Override
+	public SphereHitBox getHitBox() {
+		return this.hb;
 	}
 }
