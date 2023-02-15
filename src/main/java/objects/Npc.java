@@ -4,7 +4,7 @@ import collision.SphereHitBox;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
-public class Npc implements IGameObject{
+public class Npc implements IGameCharacter{
 	private double x;
 	private double y;
 	private SphereHitBox hb;
@@ -45,5 +45,41 @@ public class Npc implements IGameObject{
 	@Override
 	public SphereHitBox getHitBox() {
 		return this.hb;
+	}
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public double getHP() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isAlive() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setHp(double hp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setX(double x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setY(double y) {
+		// TODO Auto-generated method stub
+		
 	}
 }

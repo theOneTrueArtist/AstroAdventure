@@ -2,11 +2,12 @@ package player;
 
 
 import collision.SphereHitBox;
+import gravity.SphereGravity;
 import javafx.scene.image.Image;
 import objects.IGameCharacter;
 
 public class Player implements IGameCharacter{
-	private double x, y;
+	private double x, y, dx, dy;
 	
 	private double h = PlayerStats.height;
 	private double w = PlayerStats.width;
@@ -22,6 +23,9 @@ public class Player implements IGameCharacter{
 	private int frameCount = 0; 
 	
 	private SphereHitBox hb;
+	private SphereGravity gravity;
+	
+	private double deg = 0;
 	
 	public Player(double x, double y) {
 		this.x = x;
@@ -56,15 +60,24 @@ public class Player implements IGameCharacter{
 	public void move() {
 		state = PlayerState.getState(this);
 		frameCount++;
-		
+		this.dx = 0;
+		this.dy = 0;
 		if (this.moveLeft) {
 			this.direction = -1;
-			this.x += -this.runSpeed;
+			this.dx += -this.runSpeed;
 		}
 		if (this.moveRight) {
 			this.direction = 1;
-			this.x += this.runSpeed;
+			this.dx += this.runSpeed;
 		}
+		
+		if (this.gravity != null) {
+			this.dx -= (this.getX() - this.gravity.getX())/100;
+			this.dy -= (this.getY() - this.gravity.getY())/100;
+		}
+		this.x += this.dx;
+		this.y += this.dy;
+		
 	}
 
 	@Override
@@ -108,5 +121,9 @@ public class Player implements IGameCharacter{
 	@Override
 	public SphereHitBox getHitBox() {
 		return this.hb;
+	}
+
+	public void setGravity(SphereGravity gravity) {
+		this.gravity = gravity;
 	}
 }
