@@ -32,7 +32,7 @@ public class GameGraphics {
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		
 		Image playerSprite = player.getSprite();
-		double w = player.getWidth();
+		double w = player.getWidth()*player.direction;
 		double h = player.getHeight();
 		
 		context.setFill(Color.BLUE);
@@ -44,8 +44,16 @@ public class GameGraphics {
 			context.fillOval(500-player.getHitBox().getR()/2,300-player.getHitBox().getR()/2, player.getHitBox().getR(), player.getHitBox().getR());
 		}
 		
-		context.drawImage(playerSprite,500-w/2*player.direction,300-h/2,w*player.direction, h);
 		
+		{//player
+			context.save();
+			
+			context.translate(500, 300);
+			context.rotate(player.getDeg());
+			context.drawImage(playerSprite,-w/2,-h/2,w, h);
+			context.restore();
+			//context.drawImage(playerSprite,500-w/2*player.direction,300-h/2,w*player.direction, h);
+		}
 		
 		
 		for(IGameObject obj : level.getObjects()) {

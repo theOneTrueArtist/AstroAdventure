@@ -7,7 +7,8 @@ import javafx.scene.image.Image;
 import objects.IGameCharacter;
 
 public class Player implements IGameCharacter{
-	private double x, y, dx, dy;
+	private double x, y;
+	public double vx,vy, hx,hy;
 	
 	private double h = PlayerStats.height;
 	private double w = PlayerStats.width;
@@ -17,7 +18,7 @@ public class Player implements IGameCharacter{
 	private boolean moveRight = false;
 	private boolean moveLeft = false;
 	public int direction = 1;
-	private boolean grounded = true;
+	private boolean grounded = false;
 
 	private PlayerState state = PlayerState.idle;
 	private int frameCount = 0; 
@@ -25,7 +26,7 @@ public class Player implements IGameCharacter{
 	private SphereHitBox hb;
 	private SphereGravity gravity;
 	
-	private double deg = 0;
+	public double deg = 0;
 	
 	public Player(double x, double y) {
 		this.x = x;
@@ -56,27 +57,42 @@ public class Player implements IGameCharacter{
 		return PlayerAnimation.getSprite(state,frameCount);
 	}
 
+	public static void moveHorizontal(Player character, double vel) {
+		double r = character.deg*Math.PI/180;
+		character.hx += Math.cos(r) * vel;
+		character.hy += Math.sin(r) * vel;
+	}
+	
+	public static void moveVertical(Player character, double vel) {
+		double r = (character.deg + 90)*Math.PI/180;
+		character.vx += Math.cos(r) * vel;
+		character.vy += Math.sin(r) * vel;
+	}	
+	
 	@Override
 	public void move() {
 		state = PlayerState.getState(this);
 		frameCount++;
-		this.dx = 0;
-		this.dy = 0;
+		this.hx = 0;
+		this.hy = 0;
+		this.vx = 0;
+		this.vy = 0;
 		if (this.moveLeft) {
 			this.direction = -1;
-			this.dx += -this.runSpeed;
+			moveHorizontal(this, -this.runSpeed);
 		}
 		if (this.moveRight) {
 			this.direction = 1;
-			this.dx += this.runSpeed;
+			moveHorizontal(this, this.runSpeed);
 		}
 		
 		if (this.gravity != null) {
-			this.dx -= (this.getX() - this.gravity.getX())/100;
-			this.dy -= (this.getY() - this.gravity.getY())/100;
+			this.deg = 180 - Math.toDegrees(Math.atan2(this.x - this.gravity.getX(), this.y - this.gravity.getY()));
+			if (!this.grounded)
+				moveVertical(this, 5);
 		}
-		this.x += this.dx;
-		this.y += this.dy;
+		this.x += this.getDX();
+		this.y += this.getDY();
 		
 	}
 
@@ -111,7 +127,7 @@ public class Player implements IGameCharacter{
 	}
 	
 	public boolean isRunning() {
-		return this.grounded && (this.moveLeft || this.moveRight);
+		return (this.moveLeft || this.moveRight);// && this.grounded ;
 	}
 	
 	public boolean isGrounded() {
@@ -125,5 +141,18 @@ public class Player implements IGameCharacter{
 
 	public void setGravity(SphereGravity gravity) {
 		this.gravity = gravity;
+	}
+	public double getDX() {
+		return this.hx + this.vx;
+	}
+	
+	public double getDY() {
+		return this.hy + this.vy;
+	}
+	public double getDeg() {
+		return this.deg;
+	}
+	public void setGrounded(boolean grounded) {
+		this.grounded = grounded;
 	}
 }

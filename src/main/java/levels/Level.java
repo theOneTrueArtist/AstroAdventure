@@ -19,8 +19,10 @@ public class Level {
 		
 		
 		objects.add(new Sphere(50, 700, 400));
-		enemies.add(new Npc(0,300));
+		objects.add(new Sphere(600, 900, 200));
+		//enemies.add(new Npc(0,300));
 		gravity.add(new SphereGravity(50, 700, 1000));
+		gravity.add(new SphereGravity(600, 900, 700));
 	}
 	
 	public ArrayList<IGameObject> getObjects(){
