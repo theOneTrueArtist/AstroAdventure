@@ -10,4 +10,5 @@ public interface IGameObject {
 	public double getHeight();
 	public Image getSprite();
 	public SphereHitBox getHitBox();
+	public void move();
 }

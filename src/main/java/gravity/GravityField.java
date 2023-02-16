@@ -52,4 +52,10 @@ public class GravityField implements IGameObject{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -6,5 +6,5 @@ public class PlayerStats {
 	protected static double horizontalSpeed = 10;
 	protected static double height = 120;
 	protected static double width = 111;
-	protected static double runSpeed = 8;
+	protected static double runSpeed = 10;
 }

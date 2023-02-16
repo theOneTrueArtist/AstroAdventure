@@ -48,4 +48,10 @@ public class Sphere implements IGameObject{
 		// TODO Auto-generated method stub
 		return this.hb;
 	}
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
 }

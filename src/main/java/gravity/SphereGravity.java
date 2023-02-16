@@ -7,20 +7,32 @@ import objects.IGameObject;
 public class SphereGravity implements IGameObject{
 	double x, y, r;
 	SphereHitBox hb;
+	IGameObject obj;
 	public SphereGravity (double x, double y, double r) {
 		this.x = x;
 		this.y = y;
 		this.r = r;
 		this.hb = new SphereHitBox(this,r);
 	}
+	public SphereGravity(IGameObject obj, double r) {
+		this.obj = obj;
+		this.r = r;
+		this.hb = new SphereHitBox(this, r);
+	}
 
 	@Override
 	public double getX() {
+		if (this.obj != null) {
+			return obj.getX();
+		}
 		return this.x;
 	}
 
 	@Override
 	public double getY() {
+		if (this.obj != null) {
+			return obj.getY();
+		}
 		return this.y;
 	}
 
@@ -44,5 +56,10 @@ public class SphereGravity implements IGameObject{
 	public SphereHitBox getHitBox() {
 		
 		return this.hb;
+	}
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
 	}
 }

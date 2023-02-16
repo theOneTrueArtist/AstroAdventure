@@ -26,7 +26,6 @@ public class GameGraphics {
 		}
 	}
 	
-	
 	public static void drawScreen(Canvas canvas,Player player, Level level) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
@@ -39,15 +38,15 @@ public class GameGraphics {
 		for (SphereGravity gravity : level.getGravities()) {
 			cameraView(context, player, gravity);
 		}
-		{
+		
+		{/*
 			context.setFill(Color.RED);
 			context.fillOval(500-player.getHitBox().getR()/2,300-player.getHitBox().getR()/2, player.getHitBox().getR(), player.getHitBox().getR());
-		}
+		*/}
 		
 		
 		{//player
 			context.save();
-			
 			context.translate(500, 300);
 			context.rotate(player.getDeg());
 			context.drawImage(playerSprite,-w/2,-h/2,w, h);
@@ -63,6 +62,7 @@ public class GameGraphics {
 		for (IGameCharacter c : level.getEnemies()) {
 			cameraView(context, player, c);
 		}
+		
 		
 		
 	}

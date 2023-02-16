@@ -27,9 +27,6 @@ public class Game implements IScene{
 		app.getScene().setOnKeyPressed( e -> inputHandler.keyPressed(e) );
 		app.getScene().setOnKeyReleased( e -> inputHandler.keyReleased(e) );
 		
-		
-		
-		
 	}
 
 	@Override

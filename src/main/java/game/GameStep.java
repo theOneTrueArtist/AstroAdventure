@@ -16,7 +16,14 @@ public class GameStep {
 		}
 		player.setGrounded(false);
 		for (IGameObject obj : level.getObjects()) {
+			obj.move();
 			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox())) {
+				double deg = 180 + Math.toDegrees(Math.atan2(player.getX() - obj.getX(), player.getY() - obj.getY()));
+				double r = deg*Math.PI/180;
+				double dist = (player.getHitBox().getR()/2 + obj.getHitBox().getR()/2)-1;
+				double x = obj.getX() - Math.sin(r) * dist;
+				double y = obj.getY() - Math.cos(r) * dist;
+				player.moveTo(x,y );
 				player.setGrounded(true);
 			}
 		}

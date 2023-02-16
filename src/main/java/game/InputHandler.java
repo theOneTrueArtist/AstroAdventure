@@ -24,7 +24,9 @@ public class InputHandler {
 		}
 	public void keyPressed(KeyEvent evt) {
 		KeyCode key = evt.getCode();  // keyboard code for the pressed key			
-	
+		if (key == KeyCode.SPACE) {
+	    	   player.jumping(true);
+	       }
         if (key == KeyCode.LEFT) {  // left arrow key
             player.moveLeft(true);
         }

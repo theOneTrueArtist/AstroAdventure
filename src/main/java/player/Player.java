@@ -19,7 +19,10 @@ public class Player implements IGameCharacter{
 	private boolean moveLeft = false;
 	public int direction = 1;
 	private boolean grounded = false;
-
+	private int jumpTime = 0;
+	private double jumpDir = 0;
+	private double rotation = 0;
+	
 	private PlayerState state = PlayerState.idle;
 	private int frameCount = 0; 
 	
@@ -69,9 +72,18 @@ public class Player implements IGameCharacter{
 		character.vy += Math.sin(r) * vel;
 	}	
 	
+	public static void moveInDir(Player character, double vel, double r) {
+		double r1 = (r + 90)*Math.PI/180;
+		character.vx += Math.cos(r1) * vel;
+		character.vy += Math.sin(r1) * vel;		
+	}
+	
 	@Override
 	public void move() {
 		state = PlayerState.getState(this);
+		
+		//this.rotation = this.rotation - ((this.rotation%360)-this.deg)/4;
+		
 		frameCount++;
 		this.hx = 0;
 		this.hy = 0;
@@ -86,10 +98,15 @@ public class Player implements IGameCharacter{
 			moveHorizontal(this, this.runSpeed);
 		}
 		
+		
 		if (this.gravity != null) {
 			this.deg = 180 - Math.toDegrees(Math.atan2(this.x - this.gravity.getX(), this.y - this.gravity.getY()));
-			if (!this.grounded)
-				moveVertical(this, 5);
+			if (jumpTime > 0) {
+				this.jumpTime--;
+				moveInDir(this,-10,jumpDir);
+			}
+			else if (!this.grounded)
+				moveVertical(this, 10);
 		}
 		this.x += this.getDX();
 		this.y += this.getDY();
@@ -154,5 +171,25 @@ public class Player implements IGameCharacter{
 	}
 	public void setGrounded(boolean grounded) {
 		this.grounded = grounded;
+	}
+
+	public void jumping(boolean b) {
+		if (this.grounded) {
+			this.jumpTime = 30;
+			this.jumpDir = this.deg;
+		}
+	}
+
+	public void moveTo(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public double getRot() {
+		return this.rotation;
+	}
+
+	public boolean isjumping() {
+		return jumpTime != 0;
 	}
 }
