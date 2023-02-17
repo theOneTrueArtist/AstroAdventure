@@ -129,3 +129,6 @@ Reffererer til:
     3. Flytte spiller(vha taster)
     4. Spiller interagerer med terreng
     5. Fungerende gravitasjonsfelt på planetene (spillebrettet)
+    
+## Oppsumering
+ Det har gått bra for oss i første fase. Vi har både funnet et konsept vi synest hørrest kult ut å utvikle, og vi har fordelt oppgaver innen gruppen. Til nå i projekt utviklings prossessen så har vi ikke støtt på noen form for problemer, men vi er forbredt i tillfelle vi støter på utfordringer.
