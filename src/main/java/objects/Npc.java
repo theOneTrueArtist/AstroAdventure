@@ -1,18 +1,47 @@
 package objects;
 
+
 import collision.SphereHitBox;
-import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
+
+
 public class Npc implements IGameCharacter{
+
 	private double x;
 	private double y;
 	private SphereHitBox hb;
-	public Npc(double x, double y) {
+	private double HP;
+	private double width;
+	private double height;
+	private Image sprite;
+	/**
+	 * variable of whether NPC is currently aggro;
+	 * false is peaceful, and true is moving towards player and attacking
+	 */
+	private boolean aggro; 
+
+
+	public Npc(double x, double y, EntityRecord entRec) {
 		this.x = x;
 		this.y = y;
 		this.hb = new SphereHitBox(this, 150);
+		this.HP = entRec.HP();
+		this.width = entRec.width();
+		this.height = entRec.height();
+		this.sprite = entRec.sprite();
+
 	}
+
+	public boolean getAggro(){
+		return this.aggro;
+	}
+
+	public void setAggro(boolean a){
+		this.aggro = a;
+	}
+	
+
 	
 	@Override
 	public double getX() {
@@ -21,25 +50,24 @@ public class Npc implements IGameCharacter{
 
 	@Override
 	public double getY() {
-		// TODO Auto-generated method stub
 		return this.y;
 	}
 
 	@Override
 	public double getWidth() {
-		// TODO Auto-generated method stub
-		return 111;
+		return this.width;
 	}
 
 	@Override
 	public double getHeight() {
-		// TODO Auto-generated method stub
-		return 150;
+		return this.height;
 	}
 
 	@Override
 	public Image getSprite() {
-		return ImageLoader.getImage("/sprites/character/idle/adventurer-idle-00.png");
+		//old method:
+		//return ImageLoader.getImage("/sprites/character/idle/adventurer-idle-00.png");
+		return this.sprite;
 	}
 
 	@Override
@@ -49,37 +77,37 @@ public class Npc implements IGameCharacter{
 
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public double getHP() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.HP;
 	}
 
 	@Override
 	public boolean isAlive() {
-		// TODO Auto-generated method stub
-		return false;
+		if(getHP()<= 0){
+			return false;
+		}else {
+			return true;
+		}
 	}
 
 	@Override
 	public void setHp(double hp) {
-		// TODO Auto-generated method stub
-		
+		this.HP = hp;
 	}
 
 	@Override
 	public void setX(double x) {
-		// TODO Auto-generated method stub
-		
+		this.x = x;
 	}
 
 	@Override
 	public void setY(double y) {
-		// TODO Auto-generated method stub
-		
+		this.y = y;
 	}
+
+
 }
