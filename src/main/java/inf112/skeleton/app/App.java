@@ -29,6 +29,7 @@ public class App extends Application {
 	private long timeBudget = nanosPerStep;
 	private long lastUpdateTime = 0L;
 	private Scene scene;
+	
 	private IScene gameScene;
 
 
