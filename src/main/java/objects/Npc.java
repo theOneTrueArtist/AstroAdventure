@@ -8,15 +8,12 @@ import javafx.scene.image.Image;
 
 public class Npc implements IGameCharacter{
 
-	private double x;
-	private double y;
+	private double x, y, HP, width, height, walkSpeed, runSpeed;
 	private SphereHitBox hb;
-	private double HP;
-	private double width;
-	private double height;
 	private Image sprite;
-	/**
-	 * variable of whether NPC is currently aggro;
+	private boolean jumpAbility; //is NPc-object allowed to jump?
+
+	/**Variable of whether NPC is currently aggro;
 	 * false is peaceful, and true is moving towards player and attacking
 	 */
 	private boolean aggro; 
@@ -29,7 +26,11 @@ public class Npc implements IGameCharacter{
 		this.HP = entRec.HP();
 		this.width = entRec.width();
 		this.height = entRec.height();
+		this.walkSpeed = entRec.walkSpeed();
+		this.runSpeed = entRec.runSpeed();
 		this.sprite = entRec.sprite();
+		this.jumpAbility = entRec.jumpAbility();
+		
 
 	}
 
@@ -39,6 +40,18 @@ public class Npc implements IGameCharacter{
 
 	public void setAggro(boolean a){
 		this.aggro = a;
+	}
+
+	public boolean getJumpAbility(){
+		return this.jumpAbility;
+	}
+
+	public double getWalkSpeed(){
+		return this.walkSpeed;
+	}
+
+	public double getRunSpeed(){
+		return this.runSpeed;
 	}
 	
 

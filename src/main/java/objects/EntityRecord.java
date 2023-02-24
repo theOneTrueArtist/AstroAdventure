@@ -14,6 +14,6 @@ import javafx.scene.image.Image;
  * @param jumpAbility boolean; Is the entity allowed to jump?
  * @param sprite Image; sprite of entity
  */
-public record EntityRecord (double HP, double walkSpeed, double runSpeed, double width, double height, boolean jumpAbilty, Image sprite){
+public record EntityRecord (double HP, double walkSpeed, double runSpeed, double width, double height, boolean jumpAbility, Image sprite){
 
 }
