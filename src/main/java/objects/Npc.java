@@ -2,13 +2,14 @@ package objects;
 
 
 import collision.SphereHitBox;
+import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
 
 
-public class Npc implements IGameCharacter{
+public class Npc extends GameActor{
 
-	private double x, y, HP, width, height, walkSpeed, runSpeed;
+	private double walkSpeed, runSpeed;
 	private SphereHitBox hb;
 	private Image sprite;
 	private boolean jumpAbility; //is NPc-object allowed to jump?
@@ -23,15 +24,27 @@ public class Npc implements IGameCharacter{
 		this.x = x;
 		this.y = y;
 		this.hb = new SphereHitBox(this, 150);
-		this.HP = entRec.HP();
-		this.width = entRec.width();
-		this.height = entRec.height();
+		this.hp = entRec.HP();
+		this.w = entRec.width();
+		this.h = entRec.height();
 		this.walkSpeed = entRec.walkSpeed();
 		this.runSpeed = entRec.runSpeed();
 		this.sprite = entRec.sprite();
 		this.jumpAbility = entRec.jumpAbility();
-		
+	}
 
+	//testing ikkje viktig
+	public Npc(int x, int y) {
+		this.x = x;
+		this.y = y;
+		this.hb = new SphereHitBox(this, 150);
+		this.hp = 20;
+		this.w = 50;
+		this.h = 100;
+		this.walkSpeed = 3;
+		this.runSpeed = 5;
+		this.sprite = ImageLoader.getImage("/sprites/character/idle/adventurer-idle-00.png");
+		this.jumpAbility = true;
 	}
 
 	public boolean getAggro(){
@@ -54,28 +67,6 @@ public class Npc implements IGameCharacter{
 		return this.runSpeed;
 	}
 	
-
-	
-	@Override
-	public double getX() {
-		return this.x;
-	}
-
-	@Override
-	public double getY() {
-		return this.y;
-	}
-
-	@Override
-	public double getWidth() {
-		return this.width;
-	}
-
-	@Override
-	public double getHeight() {
-		return this.height;
-	}
-
 	@Override
 	public Image getSprite() {
 		//old method:
@@ -88,39 +79,14 @@ public class Npc implements IGameCharacter{
 		return this.hb;
 	}
 
-	@Override
 	public void move() {
+		moveHorizontal(runSpeed);
 		
-	}
-
-	@Override
-	public double getHP() {
-		return this.HP;
-	}
-
-	@Override
-	public boolean isAlive() {
-		if(getHP()<= 0){
-			return false;
-		}else {
-			return true;
+		if (this.gravity != null) {
+			this.deg = 180 - Math.toDegrees(Math.atan2(this.x - this.gravity.getX(), this.y - this.gravity.getY()));
+			if (!this.grounded)
+				moveVertical(10);
 		}
 	}
-
-	@Override
-	public void setHp(double hp) {
-		this.HP = hp;
-	}
-
-	@Override
-	public void setX(double x) {
-		this.x = x;
-	}
-
-	@Override
-	public void setY(double y) {
-		this.y = y;
-	}
-
 
 }

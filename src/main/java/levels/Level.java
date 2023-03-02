@@ -3,7 +3,8 @@ package levels;
 import java.util.ArrayList;
 
 import gravity.SphereGravity;
-import objects.IGameCharacter;
+import objects.EntityRecord;
+import objects.GameActor;
 import objects.IGameObject;
 import objects.MovingSphere;
 import objects.Npc;
@@ -12,7 +13,7 @@ import objects.Sphere;
 
 public class Level {
 	private ArrayList<IGameObject> objects;
-	private ArrayList<IGameCharacter> enemies;
+	private ArrayList<GameActor> enemies;
 	private ArrayList<SphereGravity> gravity;
 	
 	public Level() {
@@ -24,6 +25,8 @@ public class Level {
 		points.add(new Point(0,0));
 		points.add(new Point(-1000, 600));
 		points.add(new Point(-600,0));
+		
+		enemies.add(new Npc(30, 30));
 		
 		objects.add(new Sphere(50, 700, 400));
 		objects.add(new Sphere(800, 900, 200));
@@ -39,7 +42,7 @@ public class Level {
 	public ArrayList<IGameObject> getObjects(){
 		return this.objects;
 	}
-	public ArrayList<IGameCharacter> getEnemies(){
+	public ArrayList<GameActor> getEnemies(){
 		return this.enemies;
 	}
 	public ArrayList<SphereGravity> getGravities(){

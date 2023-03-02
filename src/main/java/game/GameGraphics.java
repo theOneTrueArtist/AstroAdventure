@@ -1,15 +1,12 @@
 package game;
 
-import java.util.List;
-
 import gravity.SphereGravity;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import levels.Level;
-import objects.IGameCharacter;
+import objects.GameActor;
 import objects.IGameObject;
 import player.Player;
 
@@ -39,10 +36,10 @@ public class GameGraphics {
 			cameraView(context, player, gravity);
 		}
 		
-		{/*
+		{
 			context.setFill(Color.RED);
 			context.fillOval(500-player.getHitBox().getR()/2,300-player.getHitBox().getR()/2, player.getHitBox().getR(), player.getHitBox().getR());
-		*/}
+		}
 		
 		
 		{//player
@@ -59,7 +56,7 @@ public class GameGraphics {
 			context.setFill(Color.WHITE);
 			cameraView(context, player, obj);
 		}
-		for (IGameCharacter c : level.getEnemies()) {
+		for (GameActor c : level.getEnemies()) {
 			cameraView(context, player, c);
 		}
 		
