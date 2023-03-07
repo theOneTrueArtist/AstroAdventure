@@ -10,6 +10,7 @@ import player.Player;
 public class GameStep {
 	public static void step(Player player, Level level) {
 		//set gravity
+		player.setGravity(null);
 		for (SphereGravity gravity : level.getGravities()) {
 			if (CircleCollision.collides(player.getHitBox(),gravity.getHitBox())) {
 				player.setGravity(gravity);

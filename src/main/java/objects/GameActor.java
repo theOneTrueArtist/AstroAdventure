@@ -16,6 +16,8 @@ public abstract class GameActor implements IGameObject{
 	protected boolean grounded = false;
 	protected SphereGravity gravity;
 	
+	protected int frameCount = 0;
+	
 	
 	public void moveHorizontal(double vel) {
 		double r = this.deg*Math.PI/180;
@@ -46,6 +48,11 @@ public abstract class GameActor implements IGameObject{
 	public void step() {
 		this.dx = 0;
 		this.dy = 0;
+		if (this.gravity != null) {
+			this.deg = 180 - Math.toDegrees(Math.atan2(this.x - this.gravity.getX(), this.y - this.gravity.getY()));
+			double dist = Math.sqrt(Math.pow(this.x - this.gravity.getX(),2) + Math.pow(this.y - this.gravity.getY(),2));
+			moveVertical(12*this.gravity.getWeight()/(dist));
+		}
 		move();
 		this.x += this.dx;
 		this.y += this.dy;
@@ -76,7 +83,7 @@ public abstract class GameActor implements IGameObject{
 	 *@return boolean of whether character is alive or dead
 	 */
 	public boolean isAlive() {
-		return this.hp < 0;
+		return this.hp > 0;
 	}
 	/**
 	 * Sets HP
@@ -136,4 +143,10 @@ public abstract class GameActor implements IGameObject{
 		this.y = y;
 	}
 	
+	public int getFrameCount() {
+		return this.frameCount;
+	}
+	public void setFrameCount(int frame) {
+		this.frameCount = frame;
+	}
 }

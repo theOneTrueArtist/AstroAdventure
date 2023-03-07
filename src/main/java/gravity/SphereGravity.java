@@ -7,7 +7,7 @@ import objects.IGameObject;
 public class SphereGravity implements IGameObject{
 	double x, y, r;
 	SphereHitBox hb;
-	IGameObject obj;
+	public IGameObject obj;
 	public SphereGravity (double x, double y, double r) {
 		this.x = x;
 		this.y = y;
@@ -35,7 +35,7 @@ public class SphereGravity implements IGameObject{
 		}
 		return this.y;
 	}
-
+	
 	@Override
 	public double getWidth() {
 		return this.r;
@@ -61,5 +61,13 @@ public class SphereGravity implements IGameObject{
 	public void move() {
 		// TODO Auto-generated method stub
 		
+	}
+	public double getWeight() {
+		return this.obj.getWidth();
+	}
+	@Override
+	public double getDeg() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

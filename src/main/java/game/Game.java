@@ -18,7 +18,7 @@ import player.Player;
 import scenes.IScene;
 
 public class Game implements IScene{
-	private Player player = new Player(50,300);
+	private Player player = new Player(100,300);
 	InputHandler inputHandler;
 	Level level = new Level();
 	
@@ -38,6 +38,6 @@ public class Game implements IScene{
 	@Override
 	public void draw(Canvas canvas) {
 		GameGraphics.drawScreen(canvas,player,level);
-		
+		GameGraphics.drawHud(canvas,player);
 	}
 }

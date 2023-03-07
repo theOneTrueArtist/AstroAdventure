@@ -33,4 +33,6 @@ public interface IGameObject {
 	* moves game object
 	*/
 	public void move();
+	
+	public double getDeg();
 }

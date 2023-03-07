@@ -58,4 +58,10 @@ public class GravityField implements IGameObject{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public double getDeg() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

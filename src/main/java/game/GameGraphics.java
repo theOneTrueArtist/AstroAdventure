@@ -16,17 +16,21 @@ public class GameGraphics {
 		double playerPosY = 300;
 		double offsettX = player.getX() - playerPosX;
 		double offsettY = player.getY() - playerPosY;
+		context.save();
+		context.translate(obj.getX()-offsettX, obj.getY()-offsettY);
+		context.rotate(obj.getDeg());
 		if (obj.getSprite() != null) {
-			context.drawImage(obj.getSprite(),obj.getX()-obj.getWidth()/2-offsettX,obj.getY()-obj.getHeight()/2-offsettY,obj.getWidth(), obj.getHeight());
+			context.drawImage(obj.getSprite(),-obj.getWidth()/2,-obj.getHeight()/2,obj.getWidth(), obj.getHeight());
 		}else {
-			context.fillOval(obj.getX()-obj.getWidth()/2-offsettX, obj.getY()-obj.getHeight()/2-offsettY, obj.getWidth(), obj.getHeight());
+			context.fillOval(-obj.getWidth()/2, -obj.getHeight()/2, obj.getWidth(), obj.getHeight());
 		}
+		context.restore();
 	}
 	
 	public static void drawScreen(Canvas canvas,Player player, Level level) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-		
+		context.save();
 		Image playerSprite = player.getSprite();
 		double w = player.getWidth()*player.direction;
 		double h = player.getHeight();
@@ -36,14 +40,13 @@ public class GameGraphics {
 			cameraView(context, player, gravity);
 		}
 		
-		{
+		{/*
 			context.setFill(Color.RED);
 			context.fillOval(500-player.getHitBox().getR()/2,300-player.getHitBox().getR()/2, player.getHitBox().getR(), player.getHitBox().getR());
-		}
+		*/}
 		
 		
 		{//player
-			context.save();
 			context.translate(500, 300);
 			context.rotate(player.getDeg());
 			context.drawImage(playerSprite,-w/2,-h/2,w, h);
@@ -62,5 +65,9 @@ public class GameGraphics {
 		
 		
 		
+	}
+
+	public static void drawHud(Canvas canvas, Player player) {
+		GraphicsContext context = canvas.getGraphicsContext2D();
 	}
 }
