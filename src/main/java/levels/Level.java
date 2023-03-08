@@ -28,15 +28,17 @@ public class Level {
 		
 		enemies.add(new Npc(30, 30));
 		
-		objects.add(new Sphere(50, 700, 400));
-		objects.add(new Sphere(800, 900, 200));
-		objects.add(new Sphere(1300,300, 400));
+		objects.add(new Sphere(50, 700, 400, 1));
+		objects.add(new Sphere(800, 900, 200,1));
+		objects.add(new Sphere(1300,300, 400,1));
 		objects.add(new MovingSphere(0,0,300, points));
+		objects.add(new Sphere(2700, 450, 1100, 1));
 		//enemies.add(new Npc(0,300));
 		gravity.add(new SphereGravity(objects.get(0), 1000));
 		gravity.add(new SphereGravity(objects.get(1), 700));
 		gravity.add(new SphereGravity(objects.get(2), 800));
 		gravity.add(new SphereGravity(objects.get(3), 500));
+		gravity.add(new SphereGravity(objects.get(4), 1400));
 	}
 	
 	public ArrayList<IGameObject> getObjects(){

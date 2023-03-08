@@ -1,16 +1,19 @@
 package objects;
 
 import collision.SphereHitBox;
+import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
 public class Sphere implements IGameObject{
 	double x, y, r;
+	int planet_type;
 	SphereHitBox hb;
-	public Sphere(double x, double y, double r) {
+	public Sphere(double x, double y, double r, int planet_type) {
 		this.x = x;
 		this.y = y;
 		this.r = r;
 		this.hb = new SphereHitBox(this,r);
+		this.planet_type = planet_type;
 	}
 
 	@Override
@@ -35,7 +38,7 @@ public class Sphere implements IGameObject{
 
 	@Override
 	public Image getSprite() {
-		return null;
+		return ImageLoader.getImage("/sprites/planets/planet" + this.planet_type + ".png");
 	}
 
 	@Override

@@ -51,7 +51,7 @@ public abstract class GameActor implements IGameObject{
 		if (this.gravity != null) {
 			this.deg = 180 - Math.toDegrees(Math.atan2(this.x - this.gravity.getX(), this.y - this.gravity.getY()));
 			double dist = Math.sqrt(Math.pow(this.x - this.gravity.getX(),2) + Math.pow(this.y - this.gravity.getY(),2));
-			moveVertical(12*this.gravity.getWeight()/(dist));
+			moveVertical(10*this.gravity.getWeight()/(dist));
 		}
 		move();
 		this.x += this.dx;
