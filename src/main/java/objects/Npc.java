@@ -36,12 +36,12 @@ public class Npc extends GameActor{
 		this.x = x;
 		this.y = y;
 		this.hp = 20;
-		this.w = 100;
-		this.h = 200;
+		this.w = 60;
+		this.h = 100;
 		this.hb = new SphereHitBox(this, this.h);
 		this.walkSpeed = 2;
 		this.runSpeed = 5;
-		this.sprite = ImageLoader.getImage("/sprites/character/idle/adventurer-idle-00.png");
+		this.sprite = ImageLoader.getImage("/sprites/other_assets/Alien/Alien_idle_single.png");
 		this.jumpAbility = true;
 	}
 
@@ -79,6 +79,14 @@ public class Npc extends GameActor{
 
 	public void move() {
 		moveHorizontal(runSpeed);
+	}
+
+	public boolean isjumping() {
+		return false;
+	}
+
+	public boolean isRunning() {
+		return false;
 	}
 
 }
