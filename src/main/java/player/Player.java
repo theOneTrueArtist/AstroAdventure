@@ -30,7 +30,6 @@ public class Player extends GameActor{
 		this.w = PlayerStats.width;
 		this.hp = PlayerStats.Hp;
 		this.hb = new SphereHitBox(this, this.h);
-
 	}
 
 	@Override

@@ -6,4 +6,4 @@ Til neste uke så plannlegger vi:
 Elias: se på AIs og enemies og sånn
 Snorre: jobbe med vektorisering
 Kasper: Skal utvide spillebrettet of fikse på miljøet
-Bastian:
+Bastian: skal se på lyd og tester.
