@@ -13,6 +13,9 @@ import objects.IGameObject;
 import player.Player;
 
 public class GameGraphics {
+
+
+	
 	private static void cameraView(GraphicsContext context, Player player, IGameObject obj) {
 		double playerPosX = 500;
 		double playerPosY = 300;
@@ -28,7 +31,8 @@ public class GameGraphics {
 		}
 		context.restore();
 	}
-	
+
+
 	public static void drawScreen(Canvas canvas,Player player, Level level) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
@@ -70,13 +74,8 @@ public class GameGraphics {
 	}
 
 	public static void drawHud(Canvas canvas, Player player) {
-
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.fillText("Health: " + player.getHP(), 10, canvas.getHeight()-10, 250);
 		context.setFont(new Font(40));
-
-
-
-
 	}
 }
