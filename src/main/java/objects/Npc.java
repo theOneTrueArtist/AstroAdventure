@@ -2,7 +2,6 @@ package objects;
 
 
 import collision.SphereHitBox;
-import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
 public class Npc extends GameActor{
@@ -16,6 +15,7 @@ public class Npc extends GameActor{
 	 * false is peaceful, and true is moving towards player and attacking
 	 */
 	private boolean aggro; 
+	private EnemyState state = EnemyState.idle;
 
 
 	public Npc(double x, double y, EntityRecord entRec) {
@@ -41,7 +41,8 @@ public class Npc extends GameActor{
 		this.hb = new SphereHitBox(this, this.h);
 		this.walkSpeed = 2;
 		this.runSpeed = 5;
-		this.sprite = ImageLoader.getImage("/sprites/other_assets/Alien/Alien_idle_single.png");
+		this.sprite = EnemyAnimation.getSprite(state,this.frameCount);
+		//this.sprite = ImageLoader.getImage("/sprites/other_assets/Alien/Alien_idle_single.png");
 		this.jumpAbility = true;
 	}
 
