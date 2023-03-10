@@ -16,7 +16,7 @@ import objects.Npc;
 import objects.Sphere;
 import player.Player;
 import scenes.IScene;
-
+@SuppressWarnings("unused")
 public class Game implements IScene{
 	private Player player = new Player(100,300);
 	InputHandler inputHandler;

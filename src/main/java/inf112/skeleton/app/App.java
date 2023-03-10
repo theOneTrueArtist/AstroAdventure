@@ -21,7 +21,7 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 import scenes.IScene;
-
+@SuppressWarnings("unused")
 public class App extends Application {
 	private AnimationTimer timer;
 	private Canvas canvas;

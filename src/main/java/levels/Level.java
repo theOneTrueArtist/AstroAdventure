@@ -10,7 +10,7 @@ import objects.MovingSphere;
 import objects.Npc;
 import objects.Point;
 import objects.Sphere;
-
+@SuppressWarnings("unused")
 public class Level {
 	private ArrayList<IGameObject> objects;
 	private ArrayList<GameActor> enemies;

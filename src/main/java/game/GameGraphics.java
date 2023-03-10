@@ -11,7 +11,7 @@ import levels.Level;
 import objects.GameActor;
 import objects.IGameObject;
 import player.Player;
-
+@SuppressWarnings("unused")
 public class GameGraphics {
 
 

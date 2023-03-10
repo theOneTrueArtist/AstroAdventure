@@ -4,6 +4,7 @@ package objects;
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
 
+@SuppressWarnings("unused")
 public class Npc extends GameActor{
 
 	private double walkSpeed, runSpeed;
