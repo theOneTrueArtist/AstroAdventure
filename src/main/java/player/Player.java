@@ -137,4 +137,8 @@ public class Player extends GameActor{
 	public boolean isSliding() {
 		return this.shift && this.grounded && this.isRunning();
 	}
+	
+	public PlayerState getState() {
+		return this.state;
+	}
 }
