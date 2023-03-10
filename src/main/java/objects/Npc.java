@@ -78,7 +78,7 @@ public class Npc extends GameActor{
 	}
 
 	public void move() {
-		moveHorizontal(runSpeed);
+		moveHorizontal(1);
 	}
 
 	public boolean isjumping() {
