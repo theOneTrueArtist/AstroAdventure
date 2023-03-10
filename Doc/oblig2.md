@@ -67,3 +67,13 @@ Tre forbedringspunkter kan være:
  - Kommunikasjon utenfor gruppetimene.
  - Større fremgang i kode mellom gruppetimer.
  - Modulærlitet i koden og kodestil.
+
+## Produkt og kode
+
+* Dette har vi fikset siden sist:
+    Vi har ikke fikset noe siden sist ettersom vi ikke hadde noen bugs eller problemer fra forrige innlevering
+
+* Vi har ingen kjente feil ved cross-platform bruk, vi har testet spillet på både windows og Mac og dette fungerer som det skal.
+* Vi har ikke fått testet på Linux, men etter overgang over prosjektet har vi erklært at det vil kjøre fint der og.
+
+* Vi har ikke tatt i bruk statiske analyseverktøy og har dermed ingenting å formidle angående hva vi fant / om det var nyttig.
