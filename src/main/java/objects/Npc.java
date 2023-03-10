@@ -15,7 +15,7 @@ public class Npc extends GameActor{
 	 * false is peaceful, and true is moving towards player and attacking
 	 */
 	private boolean aggro; 
-	private EnemyState state = EnemyState.idle;
+	private EnemyState state = EnemyState.run;
 
 
 	public Npc(double x, double y, EntityRecord entRec) {
@@ -39,8 +39,8 @@ public class Npc extends GameActor{
 		this.w = 60;
 		this.h = 100;
 		this.hb = new SphereHitBox(this, this.h);
-		this.walkSpeed = 2;
-		this.runSpeed = 5;
+		this.walkSpeed = 4;
+		this.runSpeed = 6;
 		this.sprite = EnemyAnimation.getSprite(state,this.frameCount);
 		//this.sprite = ImageLoader.getImage("/sprites/other_assets/Alien/Alien_idle_single.png");
 		this.jumpAbility = true;
@@ -70,7 +70,8 @@ public class Npc extends GameActor{
 	public Image getSprite() {
 		//old method:
 		//return ImageLoader.getImage("/sprites/character/idle/adventurer-idle-00.png");
-		return this.sprite;
+		this.frameCount ++;
+		return EnemyAnimation.getSprite(state,this.frameCount);
 	}
 
 	@Override
@@ -79,7 +80,7 @@ public class Npc extends GameActor{
 	}
 
 	public void move() {
-		moveHorizontal(1);
+		moveHorizontal(this.runSpeed);
 	}
 
 	public boolean isjumping() {
@@ -87,7 +88,7 @@ public class Npc extends GameActor{
 	}
 
 	public boolean isRunning() {
-		return false;
+		return true;
 	}
 
 }
