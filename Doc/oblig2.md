@@ -1,3 +1,4 @@
+##Team Møter
 Team Møte 24.2:
 Hva vi har gjort:
 Vi har ikke jobbet med noe serlig siden innlevering forrige uke.
@@ -31,7 +32,7 @@ Bastian: finne ut lyder og se på integrasjon.
 
 
 
-Prosjektrapport:
+## Prosjektrapport:
 * Hvordan fungerer rollene i teamet? Trenger dere å oppdatere hvem som er teamlead eller kundekontakt?
 
 Rollene har fungerert bra. Vi tar ansvar for de rollene vi har blitt gitt.
@@ -59,7 +60,7 @@ Vi føler at vi har kommet oss godt i gang og har lagd grunnlaget for et veldig 
 
 * Under vurdering vil det vektlegges at alle bidrar til kodebasen. Hvis det er stor forskjell i hvem som committer, må dere legge ved en kort forklaring for hvorfor det er sånn. Husk å committe alt. (Også designfiler)
 
-Den største committeren er Sondre, han har mest erfaring og tid i spill-design. Dette har latt ham gi oss et godt grunnlag for å kode ut fra.
+Den største committeren er Snorre, han har mest erfaring og tid i spill-design. Dette har latt ham gi oss et godt grunnlag for å kode ut fra. Bastian har committet minst, da han sliter med nett og lokasjonen. Men det kommer. 
 
 * Bli enige om maks tre forbedringspunkter fra retrospektivet, som skal følges opp under neste sprint.
 
@@ -67,6 +68,122 @@ Tre forbedringspunkter kan være:
  - Kommunikasjon utenfor gruppetimene.
  - Større fremgang i kode mellom gruppetimer.
  - Modulærlitet i koden og kodestil.
+
+## Krav og spesifikasjon
+* Oppdater hvilke krav dere har prioritert, hvor langt dere har kommet og hva dere har gjort siden forrige gang. Er dere kommet forbi MVP? Forklar hvordan dere prioriterer ny funksjonalitet. 
+
+Vi har ikke kommet oss forbi MVP enda. Vi prioriterer ny funksjonalitet ved å se hva som passer inn i spill konseptet vårt i de områdene vi har delt oss opp i.
+
+* Forklar kort hvordan dere har prioritert oppgavene fremover 
+
+Vi jobber alle på forskjellige felt og vi prioriterer individuelle oppgaver som fremmer funksjonalitet og bygger bakke videre funksjonalitet kan bli bygd på i de individuelle feltene.
+
+* Har dere gjort justeringer på kravene som er med i MVP? Forklar i så fall hvorfor. Hvis det er gjort endringer i rekkefølge utfra hva som er gitt fra kunde, hvorfor er dette gjort? 
+
+Nei.
+
+
+* Husk å skrive hvilke bugs som finnes i de kravene dere har utført (dersom det finnes bugs). 
+
+Vi finner ingen bugs enda.
+
+* MVP:
+  1. Vise et spillebrett
+    * Som spiller ønsker jeg å kunne se et spillebrett slik at jeg kan vite hvor jeg er og hvor jeg skal for å fullføre en bane, det vil og hjelpe med å koble hele sammenhengen av spillet.
+    
+    * Akseptansekriterier:
+      * Gitt at jeg viser et spillebrett så kan jeg se banen og danne en forståelse for hvor jeg er og hvor jeg skal.
+
+      * Arbeidsoppgaver:
+        * Vi er ferdige med dette MVP-kravet.
+  
+  2. Vise spiller på spillebrett
+     * Som spiller ønsker jeg å kunne se en spiller på spillbrettet (karakteren jeg skal styre) slik at jeg kan vite hva/hvem jeg kontrollerer og danne en forståelse for hvilke egenskaper- 
+     * jeg har som spiller.
+
+     * Akseptansekriterier:
+       * Gitt at jeg viser en spiller på spillebrettet så kan jeg se karakteren jeg styrer og alltid ha kontroll på hvor spilleren er på spillbrettet,- 
+       * samt som jeg kan skille bakgrunn/spillebrett fra min spiller slik at det ikke oppstår misforståelser.
+
+     * Arbeidsoppgaver:
+       * Vi er ferdige med dette MVP-kravet.
+
+  3. Flytte spiller(vha taster)
+     * Som spiller ønsker jeg å kunne flytte spilleren(vha taster) slik at jeg kan ha kontroll over hvor spilleren skal gå og for å danne en grunnleggende forståelse av hvilke- 
+     * muligheter jeg har når det kommer til bevegelse av spilleren.
+
+     * Akseptansekriterier:
+       * Gitt at jeg kan flytte spiller vha taster så kan jeg bevege spilleren med tastatur knappene mine og flytte karakteren rundt etter egen vilje.
+
+     * Arbeidsoppgaver:
+       * Vi er ferdige med dette MVP-kravet.
+
+  4. Spiller interagerer med terreng
+    * Som spiller ønsker jeg at spilleren (min spillbare karakter) interagerer med terreng slik at jeg skal kunne bevege meg rundt på terrenget samt som jeg skal kunne ta i bruk terregnet
+    * for å komme frem til mål.
+  
+    * Akseptansekriterier:
+      * Gitt at jeg får spiller til å interagere med terreng så vil spilleren kunne ta i bruk terreng for å kunne manøvere seg gjennom banen og frem til mål.
+      * Dette vil også hjelpe med å unngå bugs hvor f.eks. spilleren kan gå gjennom en vegg eller falle gjennom bakken.
+
+    * Arbeidsoppgaver:
+      * Vi er ferdige med dette MVP-kravet.
+
+  5. Fungerende gravitasjonsfelt på planetene (spillebrettet)
+    * Som spiller ønsker jeg et fungerende gravitasjonsfelt på planetene (spillbrettet) slik at jeg kan manøvere meg fra planet til planet og kunne springe rundt på planeten jeg er på.
+
+    * Akseptansekriterier:
+      * Gitt at jeg har fungerende gravitasjonsfelt på planetene (spillebrettet) så vil spilleren og fiender kunne manøvere seg fra planet til planet samt bevege seg rundt på planetene
+      * dem allerede er på.
+
+    * Arbeidsoppgaver:
+      * Vi er ferdige med dette MVP-kravet.
+
+  6. Vise fiender/monster som også skal interagere med terreng
+
+* Som spiller ønsker jeg fiender/monster som integrerer med terreng slik at spillet blir oppfattet befolket.
+
+* Akseptansekriterier:
+	* gitt at fiender/monstre vises og integrerer med terreng så vil fiendene være synlig grafisk og de vil ikke kunne gå igjennom terreng.
+
+* Arbeidsoppgaver:
+* vi er ferdige med dette MVP-kravet
+  
+  7. generelt fysikk system.
+
+* som utvikkler ønsker jeg et generlt fysikk system som kan brukes av alle enheter slik at det er enkelt å integrer nye elementer inn i spillet.
+
+* Akseptansekriterier: 
+* gitt at fysikk systemet påvirker objekter i spillet blir riktig, så vil objekter bli påvirket determanistisk og uniformt.
+ 
+ * Arbeidsoppgaver:
+ 	* vi er ferdige med dette MVP-kravet.
+  9. Spiller kan dø
+  
+  * som spiller ønsker jeg at det skal være mulig å tappe spillet ved at spiller dør, slik at det er en utfordring å spille.
+  
+  *  Akseptansekriterier:
+  *gitt at spiller kan dø så vil spillet være over og bli resetet tilbake til en tidligere fase.
+  
+  * Arbeidsoppgaver:
+  * vi har integrert en død state for player og mangler bare å resete spillet til en tildligere fase.
+  
+## Prioriteringsliste av MVP:
+ 
+    1. Vise et spillebrett
+    2. Vise spiller på spillebrett
+    3. Flytte spiller(vha taster)
+    4. Spiller interagerer med terreng
+    5. Fungerende gravitasjonsfelt på planetene (spillebrettet)
+	6. Vise fiender/monster som også skal interagere med terreng
+	7. Generellt fysikk system.
+	8. Spiller kan dø 
+	9. Mål for å vinne
+	10. Fiende følger spiller
+	10. Objekt-fabrikk
+	11. Start-skjerm
+
+
 
 ## Produkt og kode
 
