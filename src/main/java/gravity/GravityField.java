@@ -23,45 +23,36 @@ public class GravityField implements IGameObject{
 	
 	@Override
 	public double getX() {
-		// TODO Auto-generated method stub
 		return this.x;
 	}
 	@Override
 	public double getY() {
-		// TODO Auto-generated method stub
 		return this.y;
 	}
 	@Override
 	public double getWidth() {
-		// TODO Auto-generated method stub
 		return this.w;
 	}
 	@Override
 	public double getHeight() {
-		// TODO Auto-generated method stub
 		return h;
 	}
 	@Override
 	public Image getSprite() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public SphereHitBox getHitBox() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public double getDeg() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }

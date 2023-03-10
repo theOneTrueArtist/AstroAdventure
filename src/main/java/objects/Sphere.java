@@ -53,7 +53,6 @@ public class Sphere implements IGameObject{
 
 	@Override
 	public double getDeg() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }

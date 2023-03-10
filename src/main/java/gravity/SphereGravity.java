@@ -59,7 +59,6 @@ public class SphereGravity implements IGameObject{
 	}
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
 		
 	}
 	public double getWeight() {
@@ -67,7 +66,6 @@ public class SphereGravity implements IGameObject{
 	}
 	@Override
 	public double getDeg() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }
