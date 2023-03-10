@@ -9,6 +9,8 @@
 ## Hvordan man spiller
 * Bruk pil-tastene for å bevege deg rundt!
 * Mellomsromstasten brukes for å hoppe mellom planeter!
+* Shift bruker for å skli og gå ned på huk!
+* R for spiller død state!
 
 ## Kjøring
 * Kompileres med `mvn package`.
@@ -19,8 +21,9 @@
 *bugs
 
 ## Credits
-*sprites
-
+* https://rvros.itch.io/animated-pixel-hero
+* https://deep-fold.itch.io/pixel-planet-generator
+* https://mattwalkden.itch.io/free-space-runner-pack
 
 ## Roller
 
@@ -131,4 +134,3 @@ Reffererer til:
     
 ## Oppsumering
  Det har gått bra for oss i første fase. Vi har både funnet et konsept vi synest hørrest kult ut å utvikle, og vi har fordelt oppgaver innen gruppen. Til nå i projekt utviklings prossessen så har vi ikke støtt på noen form for problemer, men vi er forbredt i tillfelle vi støter på utfordringer.
- 
