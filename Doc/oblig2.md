@@ -60,7 +60,7 @@ Vi føler at vi har kommet oss godt i gang og har lagd grunnlaget for et veldig 
 
 * Under vurdering vil det vektlegges at alle bidrar til kodebasen. Hvis det er stor forskjell i hvem som committer, må dere legge ved en kort forklaring for hvorfor det er sånn. Husk å committe alt. (Også designfiler)
 
-Den største committeren er Snorre, han har mest erfaring og tid i spill-design. Dette har latt ham gi oss et godt grunnlag for å kode ut fra.
+Den største committeren er Snorre, han har mest erfaring og tid i spill-design. Dette har latt ham gi oss et godt grunnlag for å kode ut fra. Bastian har committet minst, da han sliter med nett og lokasjonen. Men det kommer. 
 
 * Bli enige om maks tre forbedringspunkter fra retrospektivet, som skal følges opp under neste sprint.
 
