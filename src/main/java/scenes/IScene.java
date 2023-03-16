@@ -11,4 +11,9 @@ public interface IScene {
 	* draw is used to show the different objects on screen
 	*/
 	public void draw(Canvas canvas);
+	
+	public boolean isOver();
+	
+	public IScene transitionTo();
+	
 }

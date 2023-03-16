@@ -88,6 +88,10 @@ public class App extends Application {
 	private int stepCount = 0;
 
 	protected void step() {
+		if (gameScene.isOver()) {
+			gameScene = gameScene.transitionTo();
+		}
+		
 		gameScene.step(stepCount);
 		stepCount++;
 	}
