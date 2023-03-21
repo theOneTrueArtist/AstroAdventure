@@ -26,7 +26,7 @@ public class InputHandler {
 	       }
 	       if (key == KeyCode.SHIFT) {
 	        	player.setShift(false);
-	        }
+	       }
 		}
 	
 	public void keyPressed(KeyEvent evt) {
@@ -45,6 +45,9 @@ public class InputHandler {
         }
         if (key == KeyCode.SHIFT) {
         	player.setShift(true);
+        }
+        if(key == KeyCode.A) {
+        	player.initAttack(true);
         }
         
 	}

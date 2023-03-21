@@ -9,10 +9,10 @@ public class Player extends GameActor{
 
 	private double runSpeed = PlayerStats.runSpeed;
 	
-	private boolean moveRight = false;
-	private boolean moveLeft = false;
+	private boolean moveRight;
+	private boolean moveLeft;
 	
-	private boolean shift = false;
+	private boolean shift;
 	
 	public int direction = 1;
 	
@@ -22,6 +22,8 @@ public class Player extends GameActor{
 	private PlayerState state = PlayerState.idle;
 	
 	private SphereHitBox hb;
+
+	private boolean attack;
 	
 	public Player(double x, double y) {
 		this.x = x;
@@ -87,7 +89,7 @@ public class Player extends GameActor{
 			this.frameCount++;
 			if (this.frameCount < 48) this.moveHorizontal(this.direction*12);
 			break;
-		case crouch: case idle:
+		default:
 			this.frameCount++;
 			break;
 		}
@@ -134,11 +136,21 @@ public class Player extends GameActor{
 	public boolean isCrouching() {
 		return this.shift && this.grounded;
 	}
+	
+	public boolean isAttacking() {
+		return this.attack;
+	}
+	
 	public boolean isSliding() {
 		return this.shift && this.grounded && this.isRunning();
 	}
 	
 	public PlayerState getState() {
 		return this.state;
+	}
+
+	public void initAttack(boolean b) {
+		this.attack = b;
+		
 	}
 }
