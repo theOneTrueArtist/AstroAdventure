@@ -1,6 +1,7 @@
 package player;
 
 
+import collision.PolygonHitBox;
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
 import objects.GameActor;
@@ -32,7 +33,11 @@ public class Player extends GameActor{
 		this.h = PlayerStats.height;
 		this.w = PlayerStats.width;
 		this.hp = PlayerStats.Hp;
+
+		//bytt ut når polygon hitbox er ferdig
+		//this.hb = new PolygonHitBox(this, *liste over koordinater*)
 		this.hb = new SphereHitBox(this, this.h);
+
 	}
 
 	@Override
@@ -163,4 +168,12 @@ public class Player extends GameActor{
 		this.attack = b;
 		
 	}
+
+	public boolean isOverlapping(PolygonHitBox other) {
+		
+
+		return getHitBox().intersects(other);
+	}
+
+
 }

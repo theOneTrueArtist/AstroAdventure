@@ -2,7 +2,7 @@ package collision;
 
 import objects.IGameObject;
 
-public class SphereHitBox {
+public class SphereHitBox implements IHitBox{
 	IGameObject target;
 	double r;
 	public SphereHitBox(IGameObject target, double r) {
@@ -19,5 +19,10 @@ public class SphereHitBox {
 	}
 	public double getY() {
 		return target.getY();
+	}
+
+	@Override
+	public boolean intersects(IHitBox target) {
+		return false;
 	}
 }
