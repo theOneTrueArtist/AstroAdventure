@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 
 public class PlayerAnimation {
 
-	public static Image getSprite(PlayerState state,int frame) {
+	public static Image getSprite(PlayerMovementState state,int frame) {
 		switch (state) {
 			case jump:
 				return ImageLoader.getImage("/sprites/character/jump/adventurer-crnr-jmp-0"+frame/8 %2+".png");
@@ -20,6 +20,14 @@ public class PlayerAnimation {
 				return ImageLoader.getImage("/sprites/character/slide/adventurer-stand-0"+frame/8%3 +".png");
 			case crouch:
 				return ImageLoader.getImage("/sprites/character/crouch/adventurer-crouch-0"+frame/8 %4+".png");			
+			
+			default:
+				return ImageLoader.getImage("/sprites/character/idle/adventurer-idle-0"+frame/8 %4+".png");
+		}
+	}
+	
+	public static Image getSprite(PlayerActionState state,int frame) {
+		switch (state) {
 			case attack1:
 				return ImageLoader.getImage("/sprites/character/attack1/adventurer-attack1-0"+frame/6+".png");
 			case attack2:
@@ -31,10 +39,9 @@ public class PlayerAnimation {
 			case air_attack2:
 				return ImageLoader.getImage("/sprites/character/air-attack2/adventurer-air-attack2-0"+frame/6+".png");
 			case air_attack3:
-				return ImageLoader.getImage("/sprites/character/air-attack3/adventurer-air-attack3-loop-0"+frame/8 % 2+".png");
-			
+				return ImageLoader.getImage("/sprites/character/air-attack3/adventurer-air-attack3-loop-0"+frame/8%2+".png");	
 			default:
-				return ImageLoader.getImage("/sprites/character/idle/adventurer-idle-0"+frame/8 %4+".png");
+				return ImageLoader.getImage("/sprites/character/idle/adventurer-idle-0"+frame/8+".png");
 		}
 	}
 }

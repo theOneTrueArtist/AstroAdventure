@@ -19,9 +19,10 @@ public class Player extends GameActor{
 	private int jumpTime = 0;
 	private double jumpDir = 0;
 	
-	private PlayerState state = PlayerState.idle;
 	
-	private SphereHitBox hb;
+	private PlayerMovementState movementState = PlayerMovementState.idle;
+	public PlayerActionState actionState = null;
+	private SphereHitBox hb; 
 
 	private boolean attack;
 	
@@ -36,18 +37,27 @@ public class Player extends GameActor{
 
 	@Override
 	public Image getSprite() {
-		return PlayerAnimation.getSprite(state,this.frameCount);
+		if (this.actionState != null) {
+			return PlayerAnimation.getSprite(actionState, this.frameCount);
+		}
+		return PlayerAnimation.getSprite(movementState,this.frameCount);
 	}
 	
 	@Override
 	public void move() {
-		if (state.isOver(this)) {
-			state = PlayerState.getState(this);
+		if(actionState == null) {
+			actionState = PlayerActionState.getState(this);
+		}else {
+			if (actionState.isOver(this)) {
+				actionState = PlayerActionState.getState(this);
+			}
 		}
-		
+		if (movementState.isOver(this)) {
+			movementState = PlayerMovementState.getState(this);
+		}
 		//this.rotation = this.rotation - ((this.rotation%360)-this.deg)/4;
 		
-		switch(state) {
+		switch(movementState) {
 		case run:
 			this.frameCount++;
 			if (this.moveLeft ) {
@@ -145,8 +155,8 @@ public class Player extends GameActor{
 		return this.shift && this.grounded && this.isRunning();
 	}
 	
-	public PlayerState getState() {
-		return this.state;
+	public PlayerMovementState getMovementState() {
+		return this.movementState;
 	}
 
 	public void initAttack(boolean b) {

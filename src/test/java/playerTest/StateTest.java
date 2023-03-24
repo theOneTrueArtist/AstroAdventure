@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import player.Player;
-import player.PlayerState;
+import player.PlayerMovementState;
 
 public class StateTest {
 	@Test
@@ -13,7 +13,7 @@ public class StateTest {
 		Player player = new Player(0,0);
 		
 		//player state should start off idle
-		assertTrue(player.getState() == PlayerState.idle);
+		assertTrue(player.getMovementState() == PlayerMovementState.idle);
 		
 		//player told to move left and that it is grounded
 		player.moveLeft(true);
@@ -24,14 +24,14 @@ public class StateTest {
 		
 		player.step();
 		//player state is set to run
-		assertTrue(player.getState() == PlayerState.run);	
+		assertTrue(player.getMovementState() == PlayerMovementState.run);	
 	}
 	
 	void testSetNotRunState() {
 		Player player = new Player(0,0);
 		
 		//player state should start off idle
-		assertTrue(player.getState() == PlayerState.idle);
+		assertTrue(player.getMovementState() == PlayerMovementState.idle);
 		
 		//player told to move left and that it is grounded
 		player.moveLeft(true);
@@ -45,11 +45,11 @@ public class StateTest {
 		player.setGrounded(false);
 		player.step();
 		//player state is not set to run
-		assertTrue(player.getState() != PlayerState.run);	
+		assertTrue(player.getMovementState() != PlayerMovementState.run);	
 	}
 	void testStartState() {
 		Player player = new Player(0,0);
-		assertTrue(player.getState() == PlayerState.idle);
+		assertTrue(player.getMovementState() == PlayerMovementState.idle);
 	}
 	
 }
