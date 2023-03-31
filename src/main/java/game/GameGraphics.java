@@ -60,7 +60,9 @@ public class GameGraphics {
 			//context.drawImage(playerSprite,500-w/2*player.direction,300-h/2,w*player.direction, h);
 		}
 		
-		
+		for(IGameObject obj : level.getBackground_environment()){
+			cameraView(context, player, obj);
+		}
 		for(IGameObject obj : level.getObjects()) {
 			context.setFill(Color.WHITE);
 			cameraView(context, player, obj);
@@ -75,7 +77,12 @@ public class GameGraphics {
 
 	public static void drawHud(Canvas canvas, Player player) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
-		context.fillText("Health: " + player.getHP(), 10, canvas.getHeight()-10, 250);
-		context.setFont(new Font(40));
+		context.setFill(new Color(0,0,0,1));
+		context.fillRect(0, canvas.getHeight()-40, 310, 40);
+		context.setFill(new Color(1,0,0,1));
+		context.fillRect(5, canvas.getHeight()-35, 300, 30);
+		context.setFill(new Color(0,1,0,1));
+		context.fillRect(5,canvas.getHeight()-35, 3*player.getHP(), 30);
+		context.setFill(new Color(1,1,1,1));
 	}
 }
