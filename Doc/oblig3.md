@@ -40,7 +40,10 @@ Snorre: state convolution
 Kasper: Hud elementer
 Bastian: implementere lyd
 
+
 ## Prosjektrapport:
+Utvikling denne sprinten har ikke vert like hyppig som de to tidligere, men det har mer med mange innleveringer og en ferie å gjøre en dårlig motivasjon!
+
 * Hvordan fungerer rollene i teamet? Trenger dere å oppdatere hvem som er teamlead eller kundekontakt?
 
 Rollene fungerer fortsatt bra. Vi tar ansvar for de rollene vi har blitt gitt.
