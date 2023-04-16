@@ -59,10 +59,11 @@ public class GameGraphics {
 			context.restore();
 			//context.drawImage(playerSprite,500-w/2*player.direction,300-h/2,w*player.direction, h);
 		}
-		
+		/*
 		for(IGameObject obj : level.getBackground_environment()){
 			cameraView(context, player, obj);
 		}
+		*/
 		for(IGameObject obj : level.getObjects()) {
 			context.setFill(Color.WHITE);
 			cameraView(context, player, obj);
