@@ -21,6 +21,7 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 import scenes.IScene;
+import scenes.StartScene;
 @SuppressWarnings("unused")
 public class App extends Application {
 	private AnimationTimer timer;
@@ -31,7 +32,6 @@ public class App extends Application {
 	private Scene scene;
 	
 	private IScene gameScene;
-
 
 
 	public static void startIt(String[] args) {
@@ -82,7 +82,7 @@ public class App extends Application {
 	}
 
 	private void setup() {
-		gameScene = new Game(this);
+		gameScene = new StartScene(this);
 	}
 	
 	private int stepCount = 0;

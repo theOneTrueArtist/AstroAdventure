@@ -12,7 +12,7 @@ import levels.Level;
 import objects.GameActor;
 import objects.IGameObject;
 import player.Player;
-@SuppressWarnings("unused")
+
 public class GameGraphics {
 
 
@@ -105,6 +105,15 @@ public class GameGraphics {
 		context.fillRect(5, canvas.getHeight()-35, 300, 30);
 		context.setFill(new Color(0,1,0,1));
 		context.fillRect(5,canvas.getHeight()-35, 3*player.getHP(), 30);
+		context.setFill(new Color(1,1,1,1));
+		
+		// Airbar
+		context.setFill(new Color(0,0,0,1));
+		context.fillRect(0, canvas.getHeight()-80, 251, 40);
+		context.setFill(Color.GHOSTWHITE);
+		context.fillRect(5, canvas.getHeight()-75, 240, 30);
+		context.setFill(Color.LIGHTBLUE);
+		context.fillRect(5,canvas.getHeight()-75, 4*player.getAirSupply(), 30);
 		context.setFill(new Color(1,1,1,1));
 	}
 }

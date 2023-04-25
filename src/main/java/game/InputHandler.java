@@ -11,8 +11,8 @@ public class InputHandler {
 	public InputHandler(Player player) {
 		this.player = player;
 	}
-		
-		
+
+
 	public void keyReleased(KeyEvent evt) {
 		KeyCode key = evt.getCode();  // keyboard code for the pressed key
 	       if (key == KeyCode.LEFT) {  // left arrow key
@@ -34,11 +34,6 @@ public class InputHandler {
 		if (key == KeyCode.SPACE) {
 	    	   player.jumping(true);
 	       }
-		if (key == KeyCode.R) {
-			player.setHp(0);
-			GameStep.coinsCollected = 0;
-			GameStep.powerUp = false;
-		}
         if (key == KeyCode.LEFT) {  // left arrow key
             player.moveLeft(true);
         }

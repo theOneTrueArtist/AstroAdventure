@@ -60,6 +60,13 @@ public class GameStep {
 				}
 			}
 		}
+		
+		for (GameActor enemy : level.getEnemies()) {
+			if (CircleCollision.collides(enemy.getHitBox(), player.getHitBox())) {
+				player.takeDamage();
+			}
+		}
+		
 		for (IGameObject obj : new ArrayList<IGameObject>(level.getCollectibles())) {
 			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox())) {
 				coinsCollected++;

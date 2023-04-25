@@ -3,7 +3,6 @@ package player;
 
 import collision.PolygonHitBox;
 import collision.SphereHitBox;
-import game.GameStep;
 import javafx.scene.image.Image;
 import objects.GameActor;
 
@@ -19,7 +18,8 @@ public class Player extends GameActor{
 	
 	private int jumpTime = 0;
 	private double jumpDir = 0;
-	
+	private int air;
+	private int invFrames = 0;
 	
 	private PlayerMovementState movementState = PlayerMovementState.idle;
 	public PlayerActionState actionState = null;
@@ -50,6 +50,17 @@ public class Player extends GameActor{
 	
 	@Override
 	public void move() {
+		
+		if (this.invFrames > 0) {
+			this.invFrames--;
+		}
+		
+		if (this.gravity == null) {
+			this.air--;
+		}else {
+			this.air = 2 * 30;
+		}
+		
 		if(actionState == null) {
 			actionState = PlayerActionState.getState(this);
 		}else {
@@ -170,14 +181,26 @@ public class Player extends GameActor{
 	}
 
 	public boolean isOverlapping(PolygonHitBox other) {
-		
-
 		return getHitBox().intersects(other);
 	}
 
 	public static void givePowerUp() {
 		runSpeed = 20;
 	}
+	
+	public int getAirSupply() {
+		return this.air;
+	}
+	@Override
+	public boolean isAlive() {
+		return this.hp > 0 && this.air > 0;
+	}
 
-
+	public void takeDamage() {
+		if (this.invFrames == 0) {
+			this.invFrames = 50;
+			this.hp -= 10;
+		}
+				
+	}
 }

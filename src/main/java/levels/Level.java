@@ -37,7 +37,7 @@ public class Level {
 		background_environment.add(new BackgroundElements(600, 825,200, 200,115,"Tree3"));
 
 		// Enemies (Npc)
-		enemies.add(new Npc(0, 160));
+		enemies.add(new Npc(400, 190));
 
 		//Objects (Planets)
 		objects.add(new Sphere(50, 700, 1000, 1));
