@@ -3,11 +3,18 @@ package game;
 import collision.CircleCollision;
 import gravity.SphereGravity;
 import levels.Level;
+import objects.Coins;
 import objects.GameActor;
 import objects.IGameObject;
 import player.Player;
+import player.PlayerStats;
+
+import java.util.ArrayList;
+
 
 public class GameStep {
+	static int coinsCollected = 0;
+	public static boolean powerUp = false;
 	public static void step(Player player, Level level) {
 		//set gravity
 		player.setGravity(null);
@@ -44,13 +51,26 @@ public class GameStep {
 			for(GameActor actor : level.getEnemies()) {
 				if (CircleCollision.collides(actor.getHitBox(), obj.getHitBox())) {
 					double deg = 180 + Math.toDegrees(Math.atan2(actor.getX() - obj.getX(), actor.getY() - obj.getY()));
-					double r = deg*Math.PI/180;
-					double dist = (actor.getHitBox().getR()/2 + obj.getHitBox().getR()/2)-1;
+					double r = deg * Math.PI / 180;
+					double dist = (actor.getHitBox().getR() / 2 + obj.getHitBox().getR() / 2) - 1;
 					double x = obj.getX() - Math.sin(r) * dist;
 					double y = obj.getY() - Math.cos(r) * dist;
-					actor.moveTo(x,y);
+					actor.moveTo(x, y);
 					actor.setGrounded(true);
 				}
+			}
+		}
+		for (IGameObject obj : new ArrayList<IGameObject>(level.getCollectibles())) {
+			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox())) {
+				coinsCollected++;
+				level.removeCollectible(obj);
+			}
+		}
+		for (IGameObject obj : new ArrayList<IGameObject>(level.getPowerUps())) {
+			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox())) {
+				powerUp = true;
+				Player.givePowerUp();
+				level.removePowerup(obj);
 			}
 		}
 	}

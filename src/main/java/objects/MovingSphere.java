@@ -11,7 +11,7 @@ public class MovingSphere extends Sphere{
 	private double dy;
 	
 	public MovingSphere(double x, double y, double r, ArrayList<Point> points) {
-		super(x, y, r, 1);
+		super(x, y, r, 2);
 		this.points = points;
 		target = points.get(0);
 	}

@@ -1,6 +1,7 @@
 package game;
 
 import gravity.SphereGravity;
+import inf112.skeleton.app.ImageLoader;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -40,10 +41,22 @@ public class GameGraphics {
 		Image playerSprite = player.getSprite();
 		double w = player.getWidth()*player.direction;
 		double h = player.getHeight();
-		
+
+
 		context.setFill(Color.BLUE);
 		for (SphereGravity gravity : level.getGravities()) {
 			cameraView(context, player, gravity);
+		}
+
+		for(IGameObject obj : level.getBackground_environment()){
+			cameraView(context, player, obj);
+		}
+
+		for(IGameObject obj : level.getCollectibles()){
+			cameraView(context, player, obj);
+		}
+		for(IGameObject obj : level.getPowerUps()) {
+			cameraView(context, player, obj);
 		}
 		
 		{/*
@@ -59,11 +72,7 @@ public class GameGraphics {
 			context.restore();
 			//context.drawImage(playerSprite,500-w/2*player.direction,300-h/2,w*player.direction, h);
 		}
-		/*
-		for(IGameObject obj : level.getBackground_environment()){
-			cameraView(context, player, obj);
-		}
-		*/
+
 		for(IGameObject obj : level.getObjects()) {
 			context.setFill(Color.WHITE);
 			cameraView(context, player, obj);
@@ -78,6 +87,18 @@ public class GameGraphics {
 
 	public static void drawHud(Canvas canvas, Player player) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
+
+		// Power up
+		if (GameStep.powerUp) {
+			context.drawImage(ImageLoader.getImage("/sprites/other_assets/Other Sprites/EnergyPack.png"),canvas.getWidth()-58,70,60,60);
+		}
+
+		// Coins/Diamonds Collected
+		context.setFont(new Font(50));
+		context.drawImage(ImageLoader.getImage("/sprites/other_assets/Other Sprites/Diamond.png"),canvas.getWidth()-58,5,60,60);
+		context.fillText("" + GameStep.coinsCollected, canvas.getWidth()-83,50);
+
+		// Healthbar
 		context.setFill(new Color(0,0,0,1));
 		context.fillRect(0, canvas.getHeight()-40, 310, 40);
 		context.setFill(new Color(1,0,0,1));

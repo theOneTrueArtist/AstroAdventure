@@ -36,6 +36,8 @@ public class InputHandler {
 	       }
 		if (key == KeyCode.R) {
 			player.setHp(0);
+			GameStep.coinsCollected = 0;
+			GameStep.powerUp = false;
 		}
         if (key == KeyCode.LEFT) {  // left arrow key
             player.moveLeft(true);

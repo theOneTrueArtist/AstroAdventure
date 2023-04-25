@@ -3,13 +3,13 @@ package player;
 
 import collision.PolygonHitBox;
 import collision.SphereHitBox;
+import game.GameStep;
 import javafx.scene.image.Image;
 import objects.GameActor;
 
 public class Player extends GameActor{
 
-	private double runSpeed = PlayerStats.runSpeed;
-	
+	private static double runSpeed = PlayerStats.runSpeed;
 	private boolean moveRight;
 	private boolean moveLeft;
 	
@@ -173,6 +173,10 @@ public class Player extends GameActor{
 		
 
 		return getHitBox().intersects(other);
+	}
+
+	public static void givePowerUp() {
+		runSpeed = 20;
 	}
 
 
