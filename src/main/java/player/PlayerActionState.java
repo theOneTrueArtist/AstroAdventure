@@ -2,8 +2,12 @@ package player;
 
 public enum PlayerActionState {
 	attack1, attack2, attack3,
-	air_attack1, air_attack2,air_attack3;
+	air_attack1, air_attack2,air_attack3,
+	dead;
 	public static PlayerActionState getState(Player player) {
+		if (!player.isAlive()) {
+			return dead;
+		}
 		if (player.actionState != null) {
 			PlayerActionState s = transitionToState(player);
 			if (s != null) return s;
@@ -15,6 +19,7 @@ public enum PlayerActionState {
 		}
 		return null;
 	}
+	
 	static PlayerActionState transitionToState(Player player) {
 		switch(player.actionState) {
 		case attack1:
@@ -51,6 +56,7 @@ public enum PlayerActionState {
 		}
 		return null;
 	}
+	
 	public boolean isOver(Player player) {
 		switch(this) {
 		case attack1:
@@ -59,15 +65,15 @@ public enum PlayerActionState {
 			if (player.getFrameCount() == 35) return true;
 		case attack3:
 			if (player.getFrameCount() == 47) return true;
-			
 			return !player.isGrounded();
 		case air_attack1: 
 			if (player.getFrameCount() == 23) return true;
 		case air_attack2: 
 			if (player.getFrameCount() == 17) return true;
-		case air_attack3:
-			
+		case air_attack3:	
 			return player.isGrounded();
+		case dead:
+			return player.isAlive();
 		}
 		return true;
 	}

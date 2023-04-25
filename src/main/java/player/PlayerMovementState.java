@@ -2,8 +2,7 @@ package player;
 
 public enum PlayerMovementState {
 	idle, 
-	run, jump, fall, 
-	dead, 
+	run, jump, fall,  
 	crouch, slide;
 	
 	public static PlayerMovementState getState(Player player) {
@@ -13,9 +12,7 @@ public enum PlayerMovementState {
 		PlayerMovementState s = transitionToState(player);
 		if (s != null) return s;
 		
-		if (!player.isAlive()) {
-			return dead;
-		}
+		
 		if (player.isjumping()) {
 			player.setGrounded(false);
 			return jump;
@@ -53,8 +50,7 @@ public enum PlayerMovementState {
 			return !player.isGrounded() || !player.isjumping();
 		case fall:
 			return player.isGrounded();
-		case dead:
-			return player.isAlive();
+		
 		case slide:
 			return player.isjumping() || !player.isGrounded() || !player.isAlive()||player.getFrameCount() > 71;
 		case crouch:
