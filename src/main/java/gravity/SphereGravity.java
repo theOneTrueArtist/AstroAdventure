@@ -48,7 +48,6 @@ public class SphereGravity implements IGameObject{
 
 	@Override
 	public Image getSprite() {
-		
 		return null;
 	}
 

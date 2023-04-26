@@ -7,26 +7,33 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import objects.BackgroundElements;
+import objects.IGameObject;
 import player.Player;
 import scenes.IScene;
+import scenes.StartScene;
 
 public class HelpScene implements IScene{
 	private App app;
 	private HelpInputHandler inputHandler;
 	private Player player = new Player(100,300);
+	private BackgroundElements tree;
 	
-	boolean a;
-	boolean space;
-	boolean shift;
-	boolean right;
-	boolean left;
-	
+	public boolean a;
+	public boolean space;
+	public boolean shift;
+	public boolean right;
+	public boolean left;
+	public boolean back;
+	public boolean i;
 	
 	public HelpScene(App app) {
 		this.app = app;
 		inputHandler = new HelpInputHandler(player,this);
+		tree = new BackgroundElements(400, -36,200, 200,-5,"Tree1");
 		app.getScene().setOnKeyPressed( e -> inputHandler.keyPressed(e) );
 		app.getScene().setOnKeyReleased( e -> inputHandler.keyReleased(e) );
+		app.getScene().setOnMouseClicked(e -> inputHandler.mouseClick(e));
 	}
 	
 	@Override
@@ -38,21 +45,38 @@ public class HelpScene implements IScene{
 		if (player.getY() > 10) {
 			player.setGrounded(true);
 			player.moveTo(player.getX(), 10);
-		}		
+		}
 		player.setAirSupply(20);
 	}
-
+	private static void cameraView(GraphicsContext context, Player player, IGameObject obj) {
+		double playerPosX = 500;
+		double playerPosY = 300;
+		double offsettX = player.getX() - playerPosX;
+		double offsettY = player.getY() - playerPosY;
+		context.save();
+		context.translate(obj.getX()-offsettX, obj.getY()-offsettY);
+		context.rotate(obj.getDeg());
+		if (obj.getSprite() != null) {
+			context.drawImage(obj.getSprite(),-obj.getWidth()/2,-obj.getHeight()/2,obj.getWidth(), obj.getHeight());
+		}else {
+			context.fillOval(-obj.getWidth()/2, -obj.getHeight()/2, obj.getWidth(), obj.getHeight());
+		}
+		context.restore();
+	}
+	
 	@Override
 	public void draw(Canvas canvas) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		context.save();
+		
 		double offsettY = player.getY() - 300;
 		context.setFill(Color.BLUE);
 		context.fillRect(0, 10-offsettY-250, canvas.getWidth(), 500);
 		context.setFill(Color.WHITE);
 		context.fillRect(0, 10-offsettY+50, canvas.getWidth(), 100);
 		
+		cameraView(context, player, tree);
 		
 		Image playerSprite = player.getSprite();
 		double w = player.getWidth()*player.direction;
@@ -137,20 +161,32 @@ public class HelpScene implements IScene{
 			context.fillText("Slide", 375,35);
 		else
 			context.fillText("Run-Right", 360,35);
+		context.setFill(Color.RED);
+		context.setFont(new Font(30));
+		context.fillText("press Backspace to go back", canvas.getWidth()/2 - 200, canvas.getHeight() - 20);
 		
+		context.fillText(i ? "press i for less info" : "press i for more info", canvas.getWidth()/2 - 150, canvas.getHeight() - 60);
 		
+		if (this.i) {
+			context.setFill(Color.rgb(255, 255, 255, 0.95));
+			context.fillRect(200, 100, 600, 400);
+			context.setFill(Color.BLACK);
+			context.fillText("To Remember:", 260, 150);
+			context.fillText("* Collect coins and find the power-up", 220, 200);
+			context.fillText("* Dodge the enemy", 220, 250);
+			context.fillText("* Jump from planet to planet", 220, 300);
+			context.fillText("* Air-supply run out in space", 220, 350);
+		}
 	}
 
 	@Override
 	public boolean isOver() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.back;
 	}
 
 	@Override
 	public IScene transitionTo() {
-		// TODO Auto-generated method stub
-		return null;
+		return new StartScene(this.app);
 	}
 	
 }

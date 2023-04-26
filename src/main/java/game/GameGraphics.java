@@ -14,8 +14,6 @@ import objects.IGameObject;
 import player.Player;
 
 public class GameGraphics {
-
-
 	
 	private static void cameraView(GraphicsContext context, Player player, IGameObject obj) {
 		double playerPosX = 500;

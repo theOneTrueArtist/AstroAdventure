@@ -2,15 +2,19 @@ package helpScene;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import objects.BackgroundElements;
 import player.Player;
 
 public class HelpInputHandler {
-	Player player;
-	HelpScene scene;
+	private Player player;
+	private HelpScene scene;
+	
 	
 	public HelpInputHandler(Player player,HelpScene scene) {
 		this.player = player;
 		this.scene = scene;
+		
 	}
 
 
@@ -58,6 +62,18 @@ public class HelpInputHandler {
         	player.initAttack(true);
         	scene.a = true;
         }
-        
+        if (key == KeyCode.BACK_SPACE) {
+        	scene.back = true;
+        }
+        if (key == KeyCode.I) {
+        	scene.i = !scene.i;
+        }
+	}
+	
+	public void mouseClick(MouseEvent e) {
+		
+		double x = e.getSceneX();
+		double y = e.getSceneY();
+		
 	}
 }
