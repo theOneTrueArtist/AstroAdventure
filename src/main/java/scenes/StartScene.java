@@ -19,7 +19,6 @@ public class StartScene implements IScene{
 	public StartScene(App app) {
 		this.app = app;
 		app.getScene().setOnKeyPressed( e -> keyPressed(e) );
-		
 	}
 	
 	@Override

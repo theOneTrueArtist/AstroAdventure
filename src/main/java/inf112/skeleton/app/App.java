@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import game.Game;
+import helpScene.HelpScene;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;

@@ -62,6 +62,9 @@ public class SphereGravity implements IGameObject{
 		
 	}
 	public double getWeight() {
+		if (this.obj == null) {
+			return this.r/2;
+		}
 		return this.obj.getWidth();
 	}
 	@Override

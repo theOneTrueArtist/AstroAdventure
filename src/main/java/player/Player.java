@@ -108,11 +108,6 @@ public class Player extends GameActor{
 				moveHorizontal( this.runSpeed/2);
 			}
 			break;
-		/*
-		case dead:
-			if (this.frameCount < 55) this.frameCount++; 
-			break;
-		*/
 		case slide:
 			this.frameCount++;
 			if (this.frameCount < 48) this.moveHorizontal(this.direction*12);
@@ -203,5 +198,8 @@ public class Player extends GameActor{
 			this.hp -= 10;
 		}
 				
+	}
+	public void setAirSupply(int air) {
+		this.air = air;
 	}
 }

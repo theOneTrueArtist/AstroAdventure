@@ -28,7 +28,6 @@ public class Game implements IScene{
 		inputHandler = new InputHandler(player);
 		app.getScene().setOnKeyPressed( e -> inputHandler.keyPressed(e) );
 		app.getScene().setOnKeyReleased( e -> inputHandler.keyReleased(e) );
-		
 	}
 
 	@Override
