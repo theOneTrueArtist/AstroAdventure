@@ -11,16 +11,18 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import levels.Level;
+import levels.LevelFactory;
 import objects.IGameObject;
 import objects.Npc;
 import objects.Sphere;
 import player.Player;
 import scenes.IScene;
-@SuppressWarnings("unused")
+
 public class Game implements IScene{
+	
 	private Player player = new Player(100,300);
 	InputHandler inputHandler;
-	Level level = new Level();
+	Level level = LevelFactory.produce("level1.txt");
 	App app;
 	
 	public Game(App app) {

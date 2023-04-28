@@ -30,9 +30,9 @@ public class Npc extends GameActor{
 	}
 
 	//testing ikkje viktig
-	public Npc(int x, int y) {
-		this.x = x;
-		this.y = y;
+	public Npc(double d, double e) {
+		this.x = d;
+		this.y = e;
 		this.hp = 20;
 		this.w = 60;
 		this.h = 100;
