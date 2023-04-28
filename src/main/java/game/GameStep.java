@@ -6,6 +6,7 @@ import levels.Level;
 import objects.Coins;
 import objects.GameActor;
 import objects.IGameObject;
+import objects.Npc;
 import player.Player;
 import player.PlayerStats;
 
@@ -61,7 +62,8 @@ public class GameStep {
 			}
 		}
 		
-		for (GameActor enemy : level.getEnemies()) {
+		for (Npc enemy : level.getEnemies()) {
+			enemy.setTarget(player);
 			if (CircleCollision.collides(enemy.getHitBox(), player.getHitBox())) {
 				player.takeDamage();
 			}
@@ -76,7 +78,7 @@ public class GameStep {
 		for (IGameObject obj : new ArrayList<IGameObject>(level.getPowerUps())) {
 			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox())) {
 				powerUp = true;
-				Player.givePowerUp();
+				player.givePowerUp(obj);
 				level.removePowerup(obj);
 			}
 		}

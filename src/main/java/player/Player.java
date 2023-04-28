@@ -5,6 +5,7 @@ import collision.PolygonHitBox;
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
 import objects.GameActor;
+import objects.IGameObject;
 
 public class Player extends GameActor{
 
@@ -14,12 +15,10 @@ public class Player extends GameActor{
 	
 	private boolean shift;
 	
-	public int direction = 1;
-	
-	private int jumpTime = 0;
-	private double jumpDir = 0;
+	private int jumpTime;
+	private double jumpDir;
 	private int air;
-	private int invFrames = 0;
+	private int invFrames;
 	
 	private PlayerMovementState movementState = PlayerMovementState.idle;
 	public PlayerActionState actionState = null;
@@ -37,7 +36,6 @@ public class Player extends GameActor{
 		//bytt ut når polygon hitbox er ferdig
 		//this.hb = new PolygonHitBox(this, *liste over koordinater*)
 		this.hb = new SphereHitBox(this, this.h);
-
 	}
 
 	@Override
@@ -180,8 +178,8 @@ public class Player extends GameActor{
 		return getHitBox().intersects(other);
 	}
 
-	public static void givePowerUp() {
-		runSpeed = 20;
+	public void givePowerUp(IGameObject obj) {
+		this.runSpeed = 20;
 	}
 	
 	public int getAirSupply() {

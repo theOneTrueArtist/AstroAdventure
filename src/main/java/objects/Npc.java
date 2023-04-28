@@ -3,19 +3,16 @@ package objects;
 
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
+import player.Player;
 
-@SuppressWarnings("unused")
 public class Npc extends GameActor{
 
 	private double walkSpeed, runSpeed;
 	private SphereHitBox hb;
 	private Image sprite;
 	private boolean jumpAbility; //is NPc-object allowed to jump? yes?
-
-	/**Variable of whether NPC is currently aggro;
-	 * false is peaceful, and true is moving towards player and attacking
-	 */
-	private boolean aggro; 
+	
+	private Player target; 
 	private EnemyState state = EnemyState.run;
 
 
@@ -48,13 +45,17 @@ public class Npc extends GameActor{
 	}
 
 	public boolean getAggro(){
-		return this.aggro;
+		return this.target != null;
 	}
 
-	public void setAggro(boolean a){
-		this.aggro = a;
+	public void setTarget(Player p){
+		this.target = p;
 	}
 
+	public Player getTarget() {
+		return this.target;
+	}
+	
 	public boolean getJumpAbility(){
 		return this.jumpAbility;
 	}
@@ -81,7 +82,13 @@ public class Npc extends GameActor{
 	}
 
 	public void move() {
-		moveHorizontal(this.runSpeed);
+		if (this.target != null) {
+			double r = this.deg*Math.PI/180;
+			//takes the dotproduct of vector to target + a dampener and movedir to find angle
+			double dampener = 100;
+			this.direction = (target.getX()-this.x - Math.cos(r)*dampener*-this.direction) * (Math.cos(r)) + ((target.getY()-this.y-Math.sin(r)*dampener*-this.direction)*(Math.sin(r))) > 0 ? 1 : -1;
+		}
+		moveHorizontal(this.runSpeed * this.direction);
 	}
 
 	public boolean isjumping() {

@@ -6,10 +6,10 @@ import java.util.Objects;
 import gravity.SphereGravity;
 import objects.*;
 
-@SuppressWarnings("unused")
+
 public class Level {
 	private ArrayList<IGameObject> objects;
-	private ArrayList<GameActor> enemies;
+	private ArrayList<Npc> enemies;
 	private ArrayList<SphereGravity> gravity;
 	private ArrayList<IGameObject> background_environment;
 	private ArrayList<IGameObject> collectibles;
@@ -69,7 +69,7 @@ public class Level {
 	public ArrayList<IGameObject> getObjects(){
 		return this.objects;
 	}
-	public ArrayList<GameActor> getEnemies(){
+	public ArrayList<Npc> getEnemies(){
 		return this.enemies;
 	}
 	public ArrayList<SphereGravity> getGravities(){

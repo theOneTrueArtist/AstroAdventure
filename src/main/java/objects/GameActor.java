@@ -12,6 +12,7 @@ public abstract class GameActor implements IGameObject{
 	
 	protected double deg;
 	protected double rotation;
+	protected int direction = 1;
 	
 	protected boolean grounded = false;
 	protected SphereGravity gravity;
@@ -149,4 +150,9 @@ public abstract class GameActor implements IGameObject{
 	public void setFrameCount(int frame) {
 		this.frameCount = frame;
 	}
+	
+	public int getDirection() {
+		return this.direction;
+	}
+	
 }
