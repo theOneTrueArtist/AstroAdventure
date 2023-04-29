@@ -90,7 +90,7 @@ public final class LevelFactory {
 						break;
 					}
 					String[] nums = data.split(" ", 0);
-					level.getPowerUps().add(new PowerUp(Double.parseDouble(nums[0]),Double.parseDouble(nums[1]),Double.parseDouble(nums[2])));
+					level.getPowerUps().add(new PowerCell(Double.parseDouble(nums[0]),Double.parseDouble(nums[1]),Double.parseDouble(nums[2])));
 					
 				}
 				//enemy

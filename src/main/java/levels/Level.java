@@ -13,7 +13,7 @@ public class Level {
 	private ArrayList<SphereGravity> gravity;
 	private ArrayList<IGameObject> background_environment;
 	private ArrayList<IGameObject> collectibles;
-	private ArrayList<IGameObject> powerups;
+	private ArrayList<AbstractPowerUp> powerups;
     public Level(){
     	this.objects = new ArrayList<>();
  		this.enemies = new ArrayList<>();
@@ -38,10 +38,10 @@ public class Level {
  	public ArrayList<IGameObject> getCollectibles() {
  		return this.collectibles;
  	}
- 	public ArrayList<IGameObject> getPowerUps() {
+ 	public ArrayList<AbstractPowerUp> getPowerUps() {
  		return this.powerups;
  	}
- 	public void removePowerup(IGameObject c) {
+ 	public void removePowerup(AbstractPowerUp c) {
  		powerups.remove(c);
  	}
  	public void removeCollectible(IGameObject c) {
