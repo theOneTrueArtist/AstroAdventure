@@ -1,4 +1,4 @@
-package objects;
+package enemy;
 
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;

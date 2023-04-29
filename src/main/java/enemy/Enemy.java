@@ -1,11 +1,13 @@
-package objects;
+package enemy;
 
 
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
+import objects.EntityRecord;
+import objects.GameActor;
 
 @SuppressWarnings("unused")
-public class Npc extends GameActor{
+public class Enemy extends GameActor{
 
 	private double walkSpeed, runSpeed;
 	private SphereHitBox hb;
@@ -19,7 +21,7 @@ public class Npc extends GameActor{
 	private EnemyState state = EnemyState.run;
 
 
-	public Npc(double x, double y, EntityRecord entRec) {
+	public Enemy(double x, double y, EntityRecord entRec) {
 		this.x = x;
 		this.y = y;
 		this.hp = entRec.HP();
@@ -33,7 +35,7 @@ public class Npc extends GameActor{
 	}
 
 	//testing ikkje viktig
-	public Npc(int x, int y) {
+	public Enemy(int x, int y) {
 		this.x = x;
 		this.y = y;
 		this.hp = 20;

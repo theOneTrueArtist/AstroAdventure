@@ -1,7 +1,6 @@
 package player;
 
 
-import collision.PolygonHitBox;
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
 import objects.GameActor;
@@ -176,7 +175,7 @@ public class Player extends GameActor{
 		this.attack = b;
 	}
 
-	public boolean isOverlapping(PolygonHitBox other) {
+	public boolean isOverlapping(SphereHitBox other) {
 		return getHitBox().intersects(other);
 	}
 

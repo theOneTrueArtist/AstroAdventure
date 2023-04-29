@@ -2,7 +2,7 @@ package objects;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("unused")
+
 public class MovingSphere extends Sphere{
 	private ArrayList<Point> points;
 	private Point target;

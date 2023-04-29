@@ -1,9 +1,9 @@
-package objects;
+package enemy;
 
 public enum EnemyState {
 	idle, run, jump, fall, dead, crouch, slide;
 	
-	public static EnemyState getState(Npc enemy) {
+	public static EnemyState getState(Enemy enemy) {
 		enemy.setFrameCount(0);
 		if (!enemy.isAlive()) {
 			return dead;
@@ -22,7 +22,7 @@ public enum EnemyState {
 		
 		return idle;
 	}
-	public boolean isOver(Npc enemy) {
+	public boolean isOver(Enemy enemy) {
 		switch(this) {
 		case idle:
 			return !enemy.isGrounded() || enemy.isjumping() || !enemy.isAlive() || enemy.isRunning();

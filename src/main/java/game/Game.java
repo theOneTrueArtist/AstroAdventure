@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import collision.CircleCollision;
+import enemy.Enemy;
 import inf112.skeleton.app.App;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -12,7 +13,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import levels.Level;
 import objects.IGameObject;
-import objects.Npc;
 import objects.Sphere;
 import player.Player;
 import scenes.IScene;
