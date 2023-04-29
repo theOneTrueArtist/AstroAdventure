@@ -4,36 +4,16 @@ import collision.SphereHitBox;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
-public class Sphere implements IGameObject{
-	double x, y, r;
+public class Sphere extends AbstractObject{
+	
 	int planet_type;
-	SphereHitBox hb;
 	public Sphere(double x, double y, double r, int planet_type) {
 		this.x = x;
 		this.y = y;
-		this.r = r;
+		this.h = r;
+		this.w = r;
 		this.hb = new SphereHitBox(this,r);
 		this.planet_type = planet_type;
-	}
-
-	@Override
-	public double getX() {
-		return this.x;
-	}
-
-	@Override
-	public double getY() {
-		return this.y;
-	}
-
-	@Override
-	public double getWidth() {
-		return this.r;
-	}
-
-	@Override
-	public double getHeight() {
-		return this.r;
 	}
 
 	@Override
@@ -42,17 +22,7 @@ public class Sphere implements IGameObject{
 	}
 
 	@Override
-	public SphereHitBox getHitBox() {
-		return this.hb;
-	}
-
-	@Override
 	public void move() {
 		
-	}
-
-	@Override
-	public double getDeg() {
-		return 0;
 	}
 }

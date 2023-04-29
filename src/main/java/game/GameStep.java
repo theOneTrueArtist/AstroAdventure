@@ -1,12 +1,12 @@
 package game;
 
 import collision.CircleCollision;
+import enemy.Enemy;
 import gravity.SphereGravity;
 import levels.Level;
 import objects.Coins;
 import objects.GameActor;
 import objects.IGameObject;
-import objects.Npc;
 import player.Player;
 import player.PlayerStats;
 
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class GameStep {
 	static int coinsCollected = 0;
 	public static boolean powerUp = false;
+	
 	public static void step(Player player, Level level) {
 		//set gravity
 		player.setGravity(null);
@@ -62,7 +63,7 @@ public class GameStep {
 			}
 		}
 		
-		for (Npc enemy : level.getEnemies()) {
+		for (Enemy enemy : level.getEnemies()) {
 			enemy.setTarget(player);
 			if (CircleCollision.collides(enemy.getHitBox(), player.getHitBox())) {
 				player.takeDamage();

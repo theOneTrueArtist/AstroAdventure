@@ -2,10 +2,11 @@ package gravity;
 
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
+import objects.AbstractObject;
 import objects.IGameObject;
 
-public class GravityField implements IGameObject{
-	private double x,y,w,h,deg,mag;
+public class GravityField extends AbstractObject{
+	private double mag;
 	private GravityVector vector;
 	public GravityField(double x,double y,double w, double h,double deg,double mag) {
 		this.x = x;

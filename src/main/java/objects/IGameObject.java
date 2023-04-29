@@ -33,6 +33,15 @@ public interface IGameObject {
 	* moves game object
 	*/
 	public void move();
-	
+	/**
+	 * 
+	 * @return degree of object
+	 */
 	public double getDeg();
+	
+	/**
+	 * 
+	 * @return direction of object
+	 */
+	public int getDirection();
 }

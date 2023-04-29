@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import enemy.Enemy;
 import gravity.SphereGravity;
 import objects.*;
 
@@ -99,7 +100,7 @@ public final class LevelFactory {
 						break;
 					}
 					String[] nums = data.split(" ", 0);
-					level.getEnemies().add(new Npc(Double.parseDouble(nums[0]),Double.parseDouble(nums[1])));
+					level.getEnemies().add(new Enemy(Double.parseDouble(nums[0]),Double.parseDouble(nums[1])));
 					
 				}
 			}

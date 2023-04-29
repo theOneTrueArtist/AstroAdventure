@@ -24,21 +24,6 @@ public class GameGraphics {
 		context.translate(obj.getX()-offsettX, obj.getY()-offsettY);
 		context.rotate(obj.getDeg());
 		if (obj.getSprite() != null) {
-			context.drawImage(obj.getSprite(),-obj.getWidth()/2,-obj.getHeight()/2,obj.getWidth(), obj.getHeight());
-		}else {
-			context.fillOval(-obj.getWidth()/2, -obj.getHeight()/2, obj.getWidth(), obj.getHeight());
-		}
-		context.restore();
-	}
-	private static void cameraView(GraphicsContext context, Player player, GameActor obj) {
-		double playerPosX = 500;
-		double playerPosY = 300;
-		double offsettX = player.getX() - playerPosX;
-		double offsettY = player.getY() - playerPosY;
-		context.save();
-		context.translate(obj.getX()-offsettX, obj.getY()-offsettY);
-		context.rotate(obj.getDeg());
-		if (obj.getSprite() != null) {
 			context.drawImage(obj.getSprite(),-obj.getWidth()*obj.getDirection()/2,-obj.getHeight()/2,obj.getWidth()*obj.getDirection(), obj.getHeight());
 		}else{
 			context.fillOval(-obj.getWidth()/2, -obj.getHeight()/2, obj.getWidth(), obj.getHeight());

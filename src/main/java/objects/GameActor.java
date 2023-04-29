@@ -2,23 +2,14 @@ package objects;
 
 import gravity.SphereGravity;
 
-public abstract class GameActor implements IGameObject{
-	protected double x;
-	protected double y;
-	protected double w;
-	protected double h;
+public abstract class GameActor extends AbstractObject{
 	protected double hp;
 	protected double dx, dy;
-	
-	protected double deg;
-	protected double rotation;
-	protected int direction = 1;
 	
 	protected boolean grounded = false;
 	protected SphereGravity gravity;
 	
 	protected int frameCount = 0;
-	
 	
 	public void moveHorizontal(double vel) {
 		double r = this.deg*Math.PI/180;
@@ -39,11 +30,6 @@ public abstract class GameActor implements IGameObject{
 	}
 	
 	/**
-	* Moves game character
-	*/
-	public abstract void move();
-	
-	/**
 	 * steps the character
 	 */
 	public void step() {
@@ -58,20 +44,6 @@ public abstract class GameActor implements IGameObject{
 		this.x += this.dx;
 		this.y += this.dy;
 	}
-
-	/**
-	* @return x-coordinate of object
-	*/
-	public double getX() {
-		return this.x;
-	}
-	/**
-	* @return y-coordinate of object
-	*/
-	public double getY() {
-		return this.y;
-	}
-	
 	
 	/**
 	* @Return HP of Game Character
@@ -110,19 +82,7 @@ public abstract class GameActor implements IGameObject{
 	public double getDY() {
 		return this.dy;
 	}
-	
-	public double getWidth() {
-		return this.w;
-	}
-	
-	public double getHeight() {
-		return this.h;
-	}
-	
-	public double getDeg() {
-		return this.deg;
-	}
-	
+		
 	public boolean isGrounded() {
 		return this.grounded;
 	}
@@ -134,10 +94,6 @@ public abstract class GameActor implements IGameObject{
 	public void setGrounded(boolean grounded) {
 		this.grounded = grounded;
 	}
-
-	public double getRot() {
-		return this.rotation;
-	}
 	
 	public void moveTo(double x, double y) {
 		this.x = x;
@@ -147,12 +103,8 @@ public abstract class GameActor implements IGameObject{
 	public int getFrameCount() {
 		return this.frameCount;
 	}
+	
 	public void setFrameCount(int frame) {
 		this.frameCount = frame;
-	}
-	
-	public int getDirection() {
-		return this.direction;
-	}
-	
+	}	
 }
