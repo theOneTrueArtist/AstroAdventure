@@ -1,11 +1,10 @@
 package objects;
 
-import collision.IHitBox;
 import collision.SphereHitBox;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
-public class PowerUp implements IGameObject {
+public class PowerCell implements IPowerUp {
     double x, y, degree;
     
     String sprite;
@@ -13,7 +12,7 @@ public class PowerUp implements IGameObject {
     double h = 50;
     double w = 50;
 
-    public PowerUp(double x, double y, double degree) {
+    public PowerCell(double x, double y, double degree) {
         this.x = x;
         this.y = y;
         this.degree = degree;
@@ -50,12 +49,36 @@ public class PowerUp implements IGameObject {
     }
 
     @Override
-    public void move() {
-
-    }
+    public void move() {}
 
     @Override
     public double getDeg() {
         return this.degree;
     }
+
+    @Override
+    public double productSpeed() {
+        return 2;
+    }
+
+    @Override
+    public double productHealth() {
+        return 1;
+    }
+
+    @Override
+    public double productHeight() {
+        return 1;
+    }
+
+    @Override
+    public double productWidth() {
+        return 1;
+    }
+
+    @Override
+    public double productAir() {
+        return 1;
+    }
+
 }

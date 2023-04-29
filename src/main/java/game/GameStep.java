@@ -1,12 +1,14 @@
 package game;
 
 import collision.CircleCollision;
+import enemy.Enemy;
 import gravity.SphereGravity;
 import levels.Level;
 import objects.Coins;
 import objects.GameActor;
 import objects.IGameObject;
-import objects.Npc;
+
+import objects.IPowerUp;
 import player.Player;
 import player.PlayerStats;
 
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 public class GameStep {
 	static int coinsCollected = 0;
 	public static boolean powerUp = false;
-	public static void step(Player player, Level level) {
+	public static void step(Game game, Player player, Level level) {
 		//set gravity
 		player.setGravity(null);
 		for (SphereGravity gravity : level.getGravities()) {
@@ -62,7 +64,7 @@ public class GameStep {
 			}
 		}
 		
-		for (Npc enemy : level.getEnemies()) {
+		for (Enemy enemy : level.getEnemies()) {
 			enemy.setTarget(player);
 			if (CircleCollision.collides(enemy.getHitBox(), player.getHitBox())) {
 				player.takeDamage();
@@ -75,7 +77,7 @@ public class GameStep {
 				level.removeCollectible(obj);
 			}
 		}
-		for (IGameObject obj : new ArrayList<IGameObject>(level.getPowerUps())) {
+		for (IPowerUp obj : new ArrayList<IPowerUp>(level.getPowerUps())) {
 			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox())) {
 				powerUp = true;
 				player.givePowerUp(obj);

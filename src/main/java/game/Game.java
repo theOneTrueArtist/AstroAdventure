@@ -24,6 +24,7 @@ public class Game implements IScene{
 	InputHandler inputHandler;
 	Level level = LevelFactory.produce("level1.txt");
 	App app;
+	int coinsCollected;
 	
 	public Game(App app) {
 		this.app = app;
@@ -34,13 +35,13 @@ public class Game implements IScene{
 
 	@Override
 	public void step(int stepCount) {
-		GameStep.step(player, level);
+		GameStep.step(this,player, level);
 	}
 
 	@Override
 	public void draw(Canvas canvas) {
 		GameGraphics.drawScreen(canvas,player,level);
-		GameGraphics.drawHud(canvas,player);
+		GameGraphics.drawHud(canvas,player, this);
 	}
 	
 	@Override

@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import levels.Level;
 import objects.GameActor;
 import objects.IGameObject;
+import objects.PowerCell;
 import player.Player;
 
 public class GameGraphics {
@@ -92,18 +93,16 @@ public class GameGraphics {
 		
 	}
 
-	public static void drawHud(Canvas canvas, Player player) {
+	public static void drawHud(Canvas canvas, Player player, Game game) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 
 		// Power up
-		if (GameStep.powerUp) {
-			context.drawImage(ImageLoader.getImage("/sprites/other_assets/Other Sprites/EnergyPack.png"),canvas.getWidth()-58,70,60,60);
-		}
+		if(player.activePowerCell) context.drawImage(ImageLoader.getImage("/sprites/other_assets/Other Sprites/EnergyPack.png"),canvas.getWidth()-58,70,60,60);
 
 		// Coins/Diamonds Collected
 		context.setFont(new Font(50));
 		context.drawImage(ImageLoader.getImage("/sprites/other_assets/Other Sprites/Diamond.png"),canvas.getWidth()-58,5,60,60);
-		context.fillText("" + GameStep.coinsCollected, canvas.getWidth()-83,50);
+		context.fillText("" + game.coinsCollected, canvas.getWidth()-83,50);
 
 		// Healthbar
 		context.setFill(new Color(0,0,0,1));
