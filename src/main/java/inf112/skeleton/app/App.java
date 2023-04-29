@@ -23,7 +23,7 @@ import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 import scenes.IScene;
 import scenes.StartScene;
-@SuppressWarnings("unused")
+
 public class App extends Application {
 	private AnimationTimer timer;
 	private Canvas canvas;

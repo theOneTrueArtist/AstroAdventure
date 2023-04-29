@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 
 public class PowerUp implements IGameObject {
     double x, y, degree;
-
+    
     String sprite;
     SphereHitBox hb = new SphereHitBox(this,40);
     double h = 50;

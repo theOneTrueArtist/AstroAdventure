@@ -79,7 +79,7 @@ public class HelpScene implements IScene{
 		cameraView(context, player, tree);
 		
 		Image playerSprite = player.getSprite();
-		double w = player.getWidth()*player.direction;
+		double w = player.getWidth()*player.getDirection();
 		double h = player.getHeight();
 		{//player
 			context.translate(500, 300);
