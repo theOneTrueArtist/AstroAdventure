@@ -142,7 +142,7 @@ Vi hadde en bug der det å trykke på start knappen på start skjermen crashet s
     
   7. Generelt fysikk system.
 
-    * Som utvikkler ønsker jeg et generlt fysikk system som kan brukes av alle enheter slik at det er enkelt å integrer nye elementer inn i spillet.
+    * Som utvikkler ønsker jeg et generelt fysikk system som kan brukes av alle enheter slik at det er enkelt å integrer nye elementer inn i spillet.
 
     * Akseptansekriterier: 
         * Gitt at fysikk systemet påvirker objekter i spillet blir riktig, så vil objekter bli påvirket determanistisk og uniformt.
@@ -150,15 +150,46 @@ Vi hadde en bug der det å trykke på start knappen på start skjermen crashet s
     * Arbeidsoppgaver:
         * implementer abstraksjon for objekter som kan bli påvirket og kjøre alle fysikk relaterte tester på abstraksjonen
 
-  9. Spiller kan dø
+  8. Spiller kan dø
   
-  * som spiller ønsker jeg at det skal være mulig å tappe spillet ved at spiller dør, slik at det er en utfordring å spille.
-  
-  *  Akseptansekriterier:
-    * Gitt at spiller kan dø så vil spillet være over og bli resetet tilbake til en tidligere fase.
-  
-  * Arbeidsoppgaver:
-    * sjekke om spiller har gått tom for liv og så restarte spillet over.
+    * Som spiller ønsker jeg at det skal være mulig å tappe spillet ved at spiller dør, slik at det er en utfordring å spille.
+    
+    *  Akseptansekriterier:
+        * Gitt at spiller kan dø så vil spillet være over og bli resetet tilbake til en tidligere fase.
+    
+    * Arbeidsoppgaver:
+        * sjekke om spiller har gått tom for liv og så restarte spillet over.
+
+  9. Mål for å vinne.
+
+    * Alle spill trenger en måte å "vinne", og forskjellige spill har forskjellige vinn betingelser.
+
+    * Akseptansekriterier:
+        * Gitt vinn-betingelsen er truffet skal spillet stoppe og vise at du har vunnet.
+
+    * Arbeidsoppgaver:
+        * Sjekke for når vinn-betingelsen har blitt truffet og utfører riktig handling etter dette.
+
+  10. Objekt-fabrikk.
+
+    * Som utvikler har vi lyst til å kunne enkelt opprette levler.
+
+    * Akseptansekriterier:
+        * Måtte kunne generere ett level basert på innholdet til et text-dokument.
+
+    * Arbeidsoppgaver:
+        * Opprette fabrikken som kan ta inn enkle verdier fra teskt dokumentet og fylle inn resten av informasjonen som trengs for at spillet skal fungere.
+
+  11. Start-skjerm.
+
+      * Alle spill har en start skjerm som lar deg ihvertfall enten starte eller lukke spillet.
+
+    * Akseptansekriterier:
+        * En skjerm som dukker opp før du spiller som viser tittel og lar deg starte spillet.
+
+    * Arbeidsoppgaver:
+        * Legge til denne skjermen før spillet starter.
+
 
 ## Prioriteringsliste av MVP:
  
@@ -180,7 +211,7 @@ Vi hadde en bug der det å trykke på start knappen på start skjermen crashet s
 ## Produkt og kode
 
 * Dette har vi fikset siden sist:
-
+    Vi har fikset en bug med start skjermen som crashet spillet.
 
 * Vi har ingen kjente feil ved cross-platform bruk, vi har testet spillet på både windows og Mac og dette fungerer som det skal.
 
