@@ -1,111 +1,83 @@
-##Team Møter
-Team Møte 7.4:
-Hva vi har gjort:
-Det har vært påske ferie.
-
-
-Team Møte 14.4:
-Hva vi har gjort:
-Snorre:
-Elias:
-Kasper:
-Bastian:
-
-Til neste uke så plannlegger vi:
-Elias:
-Snorre:
-Kasper:
-Bastian:
+## Team Møter
 
 Team Møte 21.4:
 Hva vi har gjort:
-Snorre:
-Elias:
-Kasper:
-Bastian:
+Vi har hatt settet fokus på bli ferdig med obligatoriske oppgaver i andre emner denne uken.
+Bastian: Har settet inn soundtrack.
 
 Til neste uke så plannlegger vi:
-Elias:
-Snorre:
-Kasper:
-Bastian:
+Lage en start-skjerm og en hjelpe side for å vise hvordan spillet fungerer.
 
 Team Møte 28.4:
 Hva vi har gjort:
-Snorre:
-Elias:
-Kasper:
-Bastian:
+* Start-skjerm er lagt til
+* Hjelpe-skjerm er lagt til
+* Fiender følger etter spiller nå.
 
 Til neste uke så plannlegger vi:
-Elias:
-Snorre:
-Kasper:
-Bastian:
+* Bli ferdig med alt.
+* Pusse opp funksjonene sånn at spillet kjører som det skall.
+* Teste for bugs, sjekke om spillet kjører bra.
 
 Deadline 5.5:
-Hva vi har gjort:
-Snorre:
-Elias:
-Kasper:
-Bastian:
+Spillet er ferdig, og presentasjon er på vei
+
 
 ## Prosjektrapport:
-Utvikling denne sprinten har ikke vert like hyppig som de to tidligere, men det har mer med mange innleveringer og en ferie å gjøre en dårlig motivasjon!
+Nå som vi nærmer oss deadline legger vi til de siste spill-funksjonene igjen og pusser bort alle bugs og problemer. Vi fokuserer på å få spillet klart til presentasjonen.
 
 * Hvordan fungerer rollene i teamet? Trenger dere å oppdatere hvem som er teamlead eller kundekontakt?
 
-
+Rollene fungerer fortsatt bra. Vi tar ansvar for oppgavene vi blir gitt.
 
 * Trenger dere andre roller? Skriv ned noen linjer om hva de ulike rollene faktisk innebærer for dere.
 
-
-
+Vi har funnet at det fungerer best for oss å ta rollene som vi mener vi trenger for øyeblikket med tanke på utvikling av spillet. Og eventuelt legge fra oss gamle roller som vi ikke trenger lenger.
 
 * Er det noen erfaringer enten team-messig eller mtp prosjektmetodikk som er verdt å nevne? Synes teamet at de valgene dere har tatt er gode? Hvis ikke, hva kan dere gjøre annerledes for å forbedre måten teamet fungerer på?
 
-
+Vi føler oss fortsatt konfortabel med valgene vi har tatt i forhold til utviklingen av prosjektet. Både med tanke på å gi utfordring og å ha noe kult å utvikle.
 
 * Hvordan er gruppedynamikken? Er det uenigheter som bør løses?
 
-
+Gruppedynamikken er forsatt god og avslappet og alle har en felles respekt, alle kommer overens fint.
 
 * Hvordan fungerer kommunikasjonen for dere?
 
-
+I gruppetimene er det god og åpen dialog, diskusjon og plannlegging. Det er hovedsaklig her vi diskuterer projektet men vi har også en discord kanal hvor vi snakker utenfor gruppetimene.
 
 * Gjør et kort retrospektiv hvor dere vurderer hva dere har klart til nå, og hva som kan forbedres. Dette skal handle om prosjektstruktur, ikke kode. Dere kan selvsagt diskutere kode, men dette handler ikke om feilretting, men om hvordan man jobber og kommuniserer.
 
-
+Vi føler oss nokså ferdig og har lagd et interessant og et veldig kult spill. Det er lett å si at spillet kunne ha vært bedre, men vi føler oss fornøyd med innsatsen og slutt resultatet.
 
 * Under vurdering vil det vektlegges at alle bidrar til kodebasen. Hvis det er stor forskjell i hvem som committer, må dere legge ved en kort forklaring for hvorfor det er sånn. Husk å committe alt. (Også designfiler)
 
-
+Den største committeren er Snorre, han har mest erfaring og tid i spill-design. Dette har latt ham gi oss et godt grunnlag for å kode ut fra. Etter oppstarten har committene våre vært nokså gjevnt fordelt. Bastian har committet minst, da han har slitet med nett og problemmer med lydimplementasjon i forhold til Javafx.
 
 * Bli enige om maks tre forbedringspunkter fra retrospektivet, som skal følges opp under neste sprint.
 
-Tre forbedringspunkter kan være:
- - 
- - 
- - 
+Siden dette er siste innlevering skriver vi heller hva vi ville ha gjort bedre over hele prosjektet:
+ - Vi burde ha hatt bedre dokumentasjon for metoder og klasser tidligere i prosjektet, dette ville ha lagt oss slippe mye spørsmål, og gjort det enklere å lese koden.
+ - Snakket mere om strukturen til koden før vi startet, for slippe problemer med utviklingen av koden senere.
+ - Kommunikasjon utenfor gruppetimene.
 
 ## Krav og spesifikasjon
 * Oppdater hvilke krav dere har prioritert, hvor langt dere har kommet og hva dere har gjort siden forrige gang. Er dere kommet forbi MVP? Forklar hvordan dere prioriterer ny funksjonalitet. 
 
-
+Vi har kommet oss forbi MVP. Vi er ferdig med alt vi føler spillet trenger, vi har lagt til det siste av funskjoner vi trenger for spillet, nå prioriterer vi bare å være klare for presentasjon.
 
 * Forklar kort hvordan dere har prioritert oppgavene fremover 
 
-
+Siden det er deadline er den eneste oppgaven fremover å være klar for presentasjon og vidre eksamen.
 
 * Har dere gjort justeringer på kravene som er med i MVP? Forklar i så fall hvorfor. Hvis det er gjort endringer i rekkefølge utfra hva som er gitt fra kunde, hvorfor er dette gjort? 
 
-
+Nei.
 
 
 * Husk å skrive hvilke bugs som finnes i de kravene dere har utført (dersom det finnes bugs). 
 
-Vi finner ingen bugs enda. Alt av problemer som dukker opp har blitt løst innen vi commit og pusher.
+Vi hadde en bug der det å trykke på start knappen på start skjermen crashet spillet for en stund, men dette problemet ble fikset.
 
 * MVP:
   1. Vise et spillebrett
