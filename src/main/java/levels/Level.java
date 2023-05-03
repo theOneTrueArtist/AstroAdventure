@@ -14,13 +14,15 @@ public class Level {
 	private ArrayList<IGameObject> background_environment;
 	private ArrayList<IGameObject> collectibles;
 	private ArrayList<AbstractPowerUp> powerups;
+	private ArrayList<IGameObject> portals;
     public Level(){
     	this.objects = new ArrayList<>();
  		this.enemies = new ArrayList<>();
  		this.gravity = new ArrayList<>();
  		this.background_environment = new ArrayList<>();
  		this.collectibles = new ArrayList<>();
- 		this.powerups = new ArrayList<>();	 
+ 		this.powerups = new ArrayList<>();
+		this.portals = new ArrayList<>();
     }
     
     public ArrayList<IGameObject> getObjects(){
@@ -41,7 +43,12 @@ public class Level {
  	public ArrayList<AbstractPowerUp> getPowerUps() {
  		return this.powerups;
  	}
- 	public void removePowerup(AbstractPowerUp c) {
+
+	public ArrayList<IGameObject> getPortals() {
+		return portals;
+	}
+
+	public void removePowerup(AbstractPowerUp c) {
  		powerups.remove(c);
  	}
  	public void removeCollectible(IGameObject c) {

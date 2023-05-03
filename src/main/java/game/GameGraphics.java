@@ -36,12 +36,14 @@ public class GameGraphics {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		context.save();
+		context.drawImage(ImageLoader.getImage("/sprites/background_elements/Space_Background.png"),0,0);
 		Image playerSprite = player.getSprite();
 		double w = player.getWidth()*player.getDirection();
 		double h = player.getHeight();
 
 
-		context.setFill(Color.BLUE);
+		//context.setFill(Color.BLUE);
+		context.setFill(new Color(0,0,1,0.3));
 		for (SphereGravity gravity : level.getGravities()) {
 			cameraView(context, player, gravity);
 		}
@@ -55,6 +57,9 @@ public class GameGraphics {
 		}
 		for(IGameObject obj : level.getPowerUps()) {
 			cameraView(context, player, obj);
+		}
+		for (IGameObject obj : level.getPortals()) {
+			if(player.activePowerCell) cameraView(context, player, obj);
 		}
 		
 		

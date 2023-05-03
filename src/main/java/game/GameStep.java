@@ -4,12 +4,10 @@ import collision.CircleCollision;
 import enemy.Enemy;
 import gravity.SphereGravity;
 import levels.Level;
-import objects.Coins;
-import objects.GameActor;
-import objects.IGameObject;
-import objects.AbstractPowerUp;
+import objects.*;
 import player.Player;
 import player.PlayerStats;
+import victoryScene.VictoryScene;
 
 import java.util.ArrayList;
 
@@ -79,6 +77,11 @@ public class GameStep {
 			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox())) {
 				player.givePowerUp(obj);
 				level.removePowerup(obj);
+			}
+		}
+		for (IGameObject obj : new ArrayList<IGameObject>(level.getPortals())) {
+			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox()) && player.activePowerCell) {
+				game.victory = true;
 			}
 		}
 	}

@@ -103,6 +103,16 @@ public final class LevelFactory {
 					level.getEnemies().add(new Enemy(Double.parseDouble(nums[0]),Double.parseDouble(nums[1])));
 					
 				}
+				//portal
+				while (true) {
+					String data = myReader.nextLine();
+					if (data.charAt(0) == '>'){
+						break;
+					}
+					String[] nums = data.split(" ", 0);
+					level.getPortals().add(new EndPortal(Double.parseDouble(nums[0]),Double.parseDouble(nums[1]),Double.parseDouble(nums[2])));
+
+				}
 			}
 			catch(NoSuchElementException e) {
 				System.out.println("File structure leads to errors");

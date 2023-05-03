@@ -17,6 +17,7 @@ import objects.IGameObject;
 import objects.Sphere;
 import player.Player;
 import scenes.IScene;
+import victoryScene.VictoryScene;
 
 public class Game implements IScene{
 	
@@ -25,6 +26,7 @@ public class Game implements IScene{
 	private Level level = LevelFactory.produce("level1.txt");
 	private App app;
 	public int coinsCollected;
+	public boolean victory = false;
 	
 	public Game(App app) {
 		this.app = app;
@@ -46,11 +48,12 @@ public class Game implements IScene{
 	
 	@Override
 	public boolean isOver() {
-		return !player.isAlive() && player.getFrameCount() >= 55;
+		return !player.isAlive() && player.getFrameCount() >= 55 || victory;
 	}
 
 	@Override
 	public IScene transitionTo() {
+		if(victory) return new VictoryScene(this.app);
 		return new Game(this.app);
 	}
 	
