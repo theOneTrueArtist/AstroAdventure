@@ -82,7 +82,8 @@ public final class LevelFactory {
 					level.getCollectibles().add(new Coins(Double.parseDouble(nums[0]),Double.parseDouble(nums[1]),Double.parseDouble(nums[2])));
 					
 				}
-				//power-ups
+				//power-ups -
+
 				while (true) {
 					String data = myReader.nextLine();
 					if (data.charAt(0) == '>'){

@@ -16,7 +16,6 @@ public class SoundTrack {
         Media sound = new Media(getClass().getResource(("") + audioFile.toString()));
         mediaPlayer = new MediaPlayer(sound);
 
-/
 
 
     }
