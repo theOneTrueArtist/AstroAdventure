@@ -80,6 +80,7 @@ public class GameStep {
 			}
 		}
 		for (IGameObject obj : new ArrayList<IGameObject>(level.getPortals())) {
+			obj.move();
 			if (CircleCollision.collides(player.getHitBox(), obj.getHitBox()) && player.activePowerCell) {
 				game.victory = true;
 			}

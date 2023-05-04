@@ -2,6 +2,7 @@ package helpScene;
 
 import gravity.SphereGravity;
 import inf112.skeleton.app.App;
+import inf112.skeleton.app.ImageLoader;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -69,9 +70,12 @@ public class HelpScene implements IScene{
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		context.save();
-		
+
+		// Space background
+		context.drawImage(ImageLoader.getImage("/sprites/background_elements/Space_Background.png"),0,0);
+
 		double offsettY = player.getY() - 300;
-		context.setFill(Color.BLUE);
+		context.setFill(new Color(0,0,1,0.3));
 		context.fillRect(0, 10-offsettY-250, canvas.getWidth(), 500);
 		context.setFill(Color.WHITE);
 		context.fillRect(0, 10-offsettY+50, canvas.getWidth(), 100);

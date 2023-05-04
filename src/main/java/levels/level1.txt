@@ -31,5 +31,5 @@
 >Power Up collectible (x,y, rot)
 400 190 (x,y)
 >Enemies
--250 250 60
+-260 240 60
 >Portal (x,y,rot)

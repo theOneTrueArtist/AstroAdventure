@@ -46,13 +46,13 @@ public class VictoryScene implements IScene {
         context.setFill(Color.WHITE);
         // Coins/Diamonds Collected
         context.setFont(new Font(100));
-        context.fillText("Victory!", canvas.getWidth()/2-100,100);
+        context.fillText("Victory!", canvas.getWidth()/2-150,100);
 
         context.setFont(new Font(60));
-        context.fillText("You got to the portal!", canvas.getWidth()/2-200,200);
+        context.fillText("You got to the portal!", canvas.getWidth()/2-250,200);
 
         context.setFont(new Font(20));
-        context.fillText("Press space to go back to the main menu!", canvas.getWidth()/2-110,400);
+        context.fillText("Press space to go back to the main menu!", canvas.getWidth()/2-160,400);
     }
 
     @Override
