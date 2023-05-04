@@ -3,6 +3,9 @@ package sound;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+/* skjønne ikke keffor importane mine ikke fungere*/
+
+
 
 public class SoundTrack {
 
