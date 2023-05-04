@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import enemy.Enemy;
 import gravity.SphereGravity;
 import objects.*;
 
@@ -90,7 +91,7 @@ public final class LevelFactory {
 						break;
 					}
 					String[] nums = data.split(" ", 0);
-					level.getPowerUps().add(new PowerUp(Double.parseDouble(nums[0]),Double.parseDouble(nums[1]),Double.parseDouble(nums[2])));
+					level.getPowerUps().add(new PowerCell(Double.parseDouble(nums[0]),Double.parseDouble(nums[1]),Double.parseDouble(nums[2])));
 					
 				}
 				//enemy
@@ -100,8 +101,18 @@ public final class LevelFactory {
 						break;
 					}
 					String[] nums = data.split(" ", 0);
-					level.getEnemies().add(new Npc(Double.parseDouble(nums[0]),Double.parseDouble(nums[1])));
+					level.getEnemies().add(new Enemy(Double.parseDouble(nums[0]),Double.parseDouble(nums[1])));
 					
+				}
+				//portal
+				while (true) {
+					String data = myReader.nextLine();
+					if (data.charAt(0) == '>'){
+						break;
+					}
+					String[] nums = data.split(" ", 0);
+					level.getPortals().add(new EndPortal(Double.parseDouble(nums[0]),Double.parseDouble(nums[1]),Double.parseDouble(nums[2])));
+
 				}
 			}
 			catch(NoSuchElementException e) {

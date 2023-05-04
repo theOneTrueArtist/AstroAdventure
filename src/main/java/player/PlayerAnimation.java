@@ -27,7 +27,7 @@ public class PlayerAnimation {
 	public static Image getSprite(PlayerActionState state,int frame) {
 		switch (state) {
 			case dead:
-				return ImageLoader.getImage("/sprites/character/die/adventurer-die-0"+frame/8+".png"); 
+				return ImageLoader.getImage("/sprites/character/die/adventurer-die-0"+frame/8%7+".png"); 
 			case attack1:
 				return ImageLoader.getImage("/sprites/character/attack1/adventurer-attack1-0"+frame/6+".png");
 			case attack2:

@@ -11,26 +11,12 @@ import javafx.scene.text.Text;
 import levels.Level;
 import objects.GameActor;
 import objects.IGameObject;
+import objects.PowerCell;
 import player.Player;
 
 public class GameGraphics {
 	
 	private static void cameraView(GraphicsContext context, Player player, IGameObject obj) {
-		double playerPosX = 500;
-		double playerPosY = 300;
-		double offsettX = player.getX() - playerPosX;
-		double offsettY = player.getY() - playerPosY;
-		context.save();
-		context.translate(obj.getX()-offsettX, obj.getY()-offsettY);
-		context.rotate(obj.getDeg());
-		if (obj.getSprite() != null) {
-			context.drawImage(obj.getSprite(),-obj.getWidth()/2,-obj.getHeight()/2,obj.getWidth(), obj.getHeight());
-		}else {
-			context.fillOval(-obj.getWidth()/2, -obj.getHeight()/2, obj.getWidth(), obj.getHeight());
-		}
-		context.restore();
-	}
-	private static void cameraView(GraphicsContext context, Player player, GameActor obj) {
 		double playerPosX = 500;
 		double playerPosY = 300;
 		double offsettX = player.getX() - playerPosX;
@@ -50,12 +36,14 @@ public class GameGraphics {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		context.save();
+		context.drawImage(ImageLoader.getImage("/sprites/background_elements/Space_Background.png"),0,0);
 		Image playerSprite = player.getSprite();
 		double w = player.getWidth()*player.getDirection();
 		double h = player.getHeight();
 
 
-		context.setFill(Color.BLUE);
+		//context.setFill(Color.BLUE);
+		context.setFill(new Color(0,0,1,0.3));
 		for (SphereGravity gravity : level.getGravities()) {
 			cameraView(context, player, gravity);
 		}
@@ -69,6 +57,9 @@ public class GameGraphics {
 		}
 		for(IGameObject obj : level.getPowerUps()) {
 			cameraView(context, player, obj);
+		}
+		for (IGameObject obj : level.getPortals()) {
+			if(player.activePowerCell) cameraView(context, player, obj);
 		}
 		
 		
@@ -92,18 +83,16 @@ public class GameGraphics {
 		
 	}
 
-	public static void drawHud(Canvas canvas, Player player) {
+	public static void drawHud(Canvas canvas, Player player, Game game) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 
 		// Power up
-		if (GameStep.powerUp) {
-			context.drawImage(ImageLoader.getImage("/sprites/other_assets/Other Sprites/EnergyPack.png"),canvas.getWidth()-58,70,60,60);
-		}
+		if(player.activePowerCell) context.drawImage(ImageLoader.getImage("/sprites/other_assets/Other Sprites/EnergyPack.png"),canvas.getWidth()-58,70,60,60);
 
 		// Coins/Diamonds Collected
 		context.setFont(new Font(50));
 		context.drawImage(ImageLoader.getImage("/sprites/other_assets/Other Sprites/Diamond.png"),canvas.getWidth()-58,5,60,60);
-		context.fillText("" + GameStep.coinsCollected, canvas.getWidth()-83,50);
+		context.fillText("" + game.coinsCollected, canvas.getWidth()-83,50);
 
 		// Healthbar
 		context.setFill(new Color(0,0,0,1));

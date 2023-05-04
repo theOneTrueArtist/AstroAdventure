@@ -70,4 +70,8 @@ public class SphereGravity implements IGameObject{
 	public double getDeg() {
 		return 0;
 	}
+	@Override
+	public int getDirection() {
+		return 1;
+	}
 }

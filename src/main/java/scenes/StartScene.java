@@ -7,6 +7,7 @@ import inf112.skeleton.app.App;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -45,6 +46,7 @@ public class StartScene implements IScene{
 	public void draw(Canvas canvas) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+		context.drawImage(ImageLoader.getImage("/sprites/background_elements/Space_Background.png"),0,0);
 		context.setFill(Color.WHITE);
 		// Coins/Diamonds Collected
 		context.setFont(new Font(50));

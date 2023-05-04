@@ -5,10 +5,11 @@ import collision.SphereHitBox;
 import javafx.scene.image.Image;
 import objects.GameActor;
 import objects.IGameObject;
+import objects.AbstractPowerUp;
 
 public class Player extends GameActor{
 
-	private static double runSpeed = PlayerStats.runSpeed;
+	private double runSpeed = PlayerStats.runSpeed;
 	private boolean moveRight;
 	private boolean moveLeft;
 	
@@ -24,6 +25,7 @@ public class Player extends GameActor{
 	private SphereHitBox hb; 
 
 	private boolean attack;
+	public boolean activePowerCell;
 	
 	public Player(double x, double y) {
 		this.x = x;
@@ -177,8 +179,13 @@ public class Player extends GameActor{
 		return getHitBox().intersects(other);
 	}
 
-	public void givePowerUp(IGameObject obj) {
-		this.runSpeed = 20;
+	public void givePowerUp(AbstractPowerUp obj) {
+		this.activePowerCell = true;
+		this.runSpeed *= obj.productSpeed();
+		this.h *= obj.productHeight();
+		this.w *= obj.productWidth();
+		this.air *= obj.productAir();
+		this.hp *= obj.productHealth();
 	}
 	
 	public int getAirSupply() {
