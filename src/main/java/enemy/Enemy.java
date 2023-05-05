@@ -3,34 +3,18 @@ package enemy;
 
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
-import objects.EntityRecord;
 import objects.GameActor;
 import player.Player;
 
 
 public class Enemy extends GameActor{
 
-	private double walkSpeed, runSpeed;
+	private double runSpeed;
 	private SphereHitBox hb;
 	private Image sprite;
-	private boolean jumpAbility; //is NPc-object allowed to jump? yes?
 	
 	private Player target; 
 	private EnemyState state = EnemyState.run;
-
-
-	public Enemy(double x, double y, EntityRecord entRec) {
-		this.x = x;
-		this.y = y;
-		this.hp = entRec.HP();
-		this.w = entRec.width();
-		this.hb = new SphereHitBox(this, 150); // this.h -> 150 må være equal t h per nå for å få hitboxen til å stemme
-		this.h = entRec.height();
-		this.walkSpeed = entRec.walkSpeed();
-		this.runSpeed = entRec.runSpeed();
-		this.sprite = entRec.sprite();
-		this.jumpAbility = entRec.jumpAbility();
-	}
 
 	//testing ikkje viktig
 	public Enemy(double x, double y) {
@@ -40,37 +24,14 @@ public class Enemy extends GameActor{
 		this.w = 60;
 		this.h = 100;
 		this.hb = new SphereHitBox(this, this.h);
-		this.walkSpeed = 4;
 		this.runSpeed = 6;
 		this.sprite = EnemyAnimation.getSprite(state,this.frameCount);
-		//this.sprite = ImageLoader.getImage("/sprites/other_assets/Alien/Alien_idle_single.png");
-		this.jumpAbility = true;
-	}
-
-	public boolean getAggro(){
-		return this.target != null;
 	}
 
 	public void setTarget(Player p){
 		this.target = p;
 	}
 
-	public Player getTarget() {
-		return this.target;
-	}
-	
-	public boolean getJumpAbility(){
-		return this.jumpAbility;
-	}
-
-	public double getWalkSpeed(){
-		return this.walkSpeed;
-	}
-
-	public double getRunSpeed(){
-		return this.runSpeed;
-	}
-	
 	@Override
 	public Image getSprite() {
 		//old method:
