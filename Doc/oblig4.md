@@ -81,10 +81,10 @@ Siden det er deadline er den eneste oppgaven fremover å være klar for presenta
 
 Nei.
 
-
 * Husk å skrive hvilke bugs som finnes i de kravene dere har utført (dersom det finnes bugs). 
 
-Vi hadde en bug der det å trykke på start knappen på start skjermen crashet spillet for en stund, men dette problemet ble fikset.
+Vi hadde en bug der det å trykke på start knappen på start skjermen crashet spillet for en stund, men dette problemet ble fikset. 
+Planen har hele veien vert at hoved-enemy skal være udødelig og dette er derfor da ikke en bug. 
 
 * MVP:
   1. Vise et spillebrett
