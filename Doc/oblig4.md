@@ -7,12 +7,15 @@ Bastian: Har settet inn soundtrack.
 
 Til neste uke så plannlegger vi:
 Lage en start-skjerm og en hjelpe side for å vise hvordan spillet fungerer.
+Skal fikse at finde springer etter spiller. 
+
 
 Team Møte 28.4:
 Hva vi har gjort:
 * Start-skjerm er lagt til
 * Hjelpe-skjerm er lagt til
 * Fiender følger etter spiller nå.
+* Implimentere en objekt fabrikk for å kunne generer lvl'er.
 
 Til neste uke så plannlegger vi:
 * Bli ferdig med alt.
@@ -20,7 +23,9 @@ Til neste uke så plannlegger vi:
 * Teste for bugs, sjekke om spillet kjører bra.
 
 Deadline 5.5:
-Spillet er ferdig, og presentasjon er på vei
+Spillet er ferdig, og presentasjon er på vei.
+Vi jobber med og sette javadocs på public funksjoner. 
+
 
 
 ## Prosjektrapport:
@@ -36,7 +41,9 @@ Vi har funnet at det fungerer best for oss å ta rollene som vi mener vi trenger
 
 * Er det noen erfaringer enten team-messig eller mtp prosjektmetodikk som er verdt å nevne? Synes teamet at de valgene dere har tatt er gode? Hvis ikke, hva kan dere gjøre annerledes for å forbedre måten teamet fungerer på?
 
-Vi føler oss fortsatt konfortabel med valgene vi har tatt i forhold til utviklingen av prosjektet. Både med tanke på å gi utfordring og å ha noe kult å utvikle.
+Vi synes at valgene vi har tatt var gode med tanke på prosjekts utviklingen. Både med tanke på å gi utfordring, og utvikle i lag uten og trokke på hver andre. I tilegg og ha noe kult å utvikle. Vi har også hatt et godt sammerbeid i slutten av prosjektet.  
+
+
 
 * Hvordan er gruppedynamikken? Er det uenigheter som bør løses?
 
@@ -52,7 +59,7 @@ Vi føler oss nokså ferdig og har lagd et interessant og et veldig kult spill. 
 
 * Under vurdering vil det vektlegges at alle bidrar til kodebasen. Hvis det er stor forskjell i hvem som committer, må dere legge ved en kort forklaring for hvorfor det er sånn. Husk å committe alt. (Også designfiler)
 
-Den største committeren er Snorre, han har mest erfaring og tid i spill-design. Dette har latt ham gi oss et godt grunnlag for å kode ut fra. Etter oppstarten har committene våre vært nokså gjevnt fordelt. Bastian har committet minst, da han har slitet med nett og problemmer med lydimplementasjon i forhold til Javafx.
+Den største committeren er Snorre, han har mest erfaring og tid i spill-design. Dette har latt ham gi oss et godt grunnlag for å kode ut fra. Etter oppstarten har committene våre vært nokså gjevnt fordelt. Bastian har committet minst, da han har slitet med nett og problemmer med lydimplementasjon i forhold til Javafx. Hvor mye de enkelter på gruppen liker og commite på en gangen er forskjellig.
 
 * Bli enige om maks tre forbedringspunkter fra retrospektivet, som skal følges opp under neste sprint.
 
@@ -212,10 +219,13 @@ Vi hadde en bug der det å trykke på start knappen på start skjermen crashet s
 
 * Dette har vi fikset siden sist:
     Vi har fikset en bug med start skjermen som crashet spillet.
+    Vi har lagt til flere tester, fikset lyd og laget kommentarer med javadoc. Itilleg til dette har vi også gjort ferdig de gjennstående mvp kravene.
 
 * Vi har ingen kjente feil ved cross-platform bruk, vi har testet spillet på både windows og Mac og dette fungerer som det skal.
 
 * Vi har ikke fått testet på Linux, men etter overgang over prosjektet har vi erklært at det vil kjøre fint der og.
 
 * Vi har ikke tatt i bruk statiske analyseverktøy og har dermed ingenting å formidle angående hva vi fant / om det var nyttig.
+
+* 
 
