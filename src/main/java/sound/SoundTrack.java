@@ -44,7 +44,7 @@ public class SoundTrack {
     }
 
     public void pause(){
-        mediaPlayer.pause();;
+        mediaPlayer.pause();
     }
 
     public void loop(){
