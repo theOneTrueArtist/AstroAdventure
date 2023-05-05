@@ -3,7 +3,6 @@ package helpScene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import objects.BackgroundElements;
 import player.Player;
 
 public class HelpInputHandler {

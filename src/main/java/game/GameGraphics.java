@@ -7,11 +7,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import levels.Level;
 import objects.GameActor;
 import objects.IGameObject;
-import objects.PowerCell;
 import player.Player;
 
 public class GameGraphics {

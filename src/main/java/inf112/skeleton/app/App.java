@@ -1,25 +1,11 @@
 package inf112.skeleton.app;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import game.Game;
-import helpScene.HelpScene;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.effect.Bloom;
-import javafx.scene.effect.BoxBlur;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.Paint;
-import javafx.scene.paint.RadialGradient;
-import javafx.scene.paint.Stop;
-import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 import scenes.IScene;
 import scenes.StartScene;

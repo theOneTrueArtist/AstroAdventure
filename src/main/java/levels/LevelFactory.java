@@ -1,14 +1,14 @@
 package levels;
 
+import enemy.Enemy;
+import gravity.SphereGravity;
+import objects.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-
-import enemy.Enemy;
-import gravity.SphereGravity;
-import objects.*;
 
 
 public final class LevelFactory {

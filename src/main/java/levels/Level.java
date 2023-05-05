@@ -1,10 +1,11 @@
 package levels;
 
-import java.util.ArrayList;
-
 import enemy.Enemy;
 import gravity.SphereGravity;
-import objects.*;
+import objects.AbstractPowerUp;
+import objects.IGameObject;
+
+import java.util.ArrayList;
 
 
 public class Level {

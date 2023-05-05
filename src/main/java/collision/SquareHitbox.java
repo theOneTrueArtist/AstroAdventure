@@ -1,6 +1,7 @@
 package collision;
 
-import javafx.scene.shape.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 import objects.IGameObject;
 
 public class SquareHitbox implements IHitBox{

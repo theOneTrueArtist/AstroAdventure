@@ -1,7 +1,5 @@
 package victoryScene;
 
-import game.Game;
-import helpScene.HelpScene;
 import inf112.skeleton.app.App;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.canvas.Canvas;

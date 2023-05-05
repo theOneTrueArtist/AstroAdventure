@@ -3,9 +3,8 @@ package player;
 
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
-import objects.GameActor;
-import objects.IGameObject;
 import objects.AbstractPowerUp;
+import objects.GameActor;
 
 public class Player extends GameActor{
 
