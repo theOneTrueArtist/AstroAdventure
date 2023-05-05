@@ -10,12 +10,10 @@ public class InputHandler {
 	Player player;
 	SoundTrack music;
 	boolean muted = false;
-		
-	public InputHandler(Player player) {
-		this.player = player;
 
-		music = new SoundTrack();
-		music.play();
+	public InputHandler(Player player, SoundTrack music) {
+		this.player = player;
+		this.music = music;
 	}
 
 

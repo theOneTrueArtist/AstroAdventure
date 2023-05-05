@@ -6,10 +6,11 @@ import levels.Level;
 import levels.LevelFactory;
 import player.Player;
 import scenes.IScene;
+import sound.SoundTrack;
 import victoryScene.VictoryScene;
 
 public class Game implements IScene{
-	
+	private SoundTrack music;
 	private Player player = new Player(100,300);
 	private InputHandler inputHandler;
 	private Level level = LevelFactory.produce("level1.txt");
@@ -18,8 +19,10 @@ public class Game implements IScene{
 	public boolean victory = false;
 	
 	public Game(App app) {
+		music = new SoundTrack();
+		music.play();
 		this.app = app;
-		this.inputHandler = new InputHandler(player);
+		this.inputHandler = new InputHandler(player, music);
 		app.getScene().setOnKeyPressed( e -> this.inputHandler.keyPressed(e) );
 		app.getScene().setOnKeyReleased( e -> this.inputHandler.keyReleased(e) );
 	}
@@ -42,8 +45,10 @@ public class Game implements IScene{
 
 	@Override
 	public IScene transitionTo() {
+		music.stop();
 		if(victory) return new VictoryScene(this.app);
 		return new Game(this.app);
+
 	}
 	
 }

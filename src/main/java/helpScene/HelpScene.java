@@ -34,7 +34,6 @@ public class HelpScene implements IScene{
 		tree = new BackgroundElements(400, -36,200, 200,-5,"Tree1");
 		app.getScene().setOnKeyPressed( e -> inputHandler.keyPressed(e) );
 		app.getScene().setOnKeyReleased( e -> inputHandler.keyReleased(e) );
-		app.getScene().setOnMouseClicked(e -> inputHandler.mouseClick(e));
 	}
 	
 	@Override
@@ -180,6 +179,7 @@ public class HelpScene implements IScene{
 			context.fillText("* Dodge the enemy", 220, 250);
 			context.fillText("* Jump from planet to planet", 220, 300);
 			context.fillText("* Air-supply run out in space", 220, 350);
+			context.fillText("*  Get power-up to make portal appair", 220, 400);
 		}
 	}
 
