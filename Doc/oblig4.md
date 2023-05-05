@@ -227,5 +227,3 @@ Vi hadde en bug der det å trykke på start knappen på start skjermen crashet s
 
 * Vi har ikke tatt i bruk statiske analyseverktøy og har dermed ingenting å formidle angående hva vi fant / om det var nyttig.
 
-* 
-
