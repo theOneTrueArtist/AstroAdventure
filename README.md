@@ -6,7 +6,7 @@
 * Trello Link: https://trello.com/invite/b/f9N23lGE/ATTIe6bde57c79ea9dd4b28bf7a10b2c4b325186A05D/inf112
 
 ## Om spillet
-*« Dirk er galaksens beste romutforsker, men etter romskipet hans krasjet må han løpe fra forfølgere hans ved å krysse galaksen!»*
+*« Dirk er galaksens beste romutforsker, men etter romskipet hans krasjet må han løpe fra forfølgere hans ved å krysse galaksen! Hjelp ha med å finne portalen hjem!»*
 
 ## Hvordan man spiller
 * Bruk pil-tastene for å bevege deg rundt!
@@ -20,8 +20,6 @@
 * Kjøres med `java -jar target/kurt-mario-1.0-SNAPSHOT-fat.jar`
 * Krever Java 15 eller senere
 
-## Kjente feil
-*bugs
 
 ## Credits
 * https://rvros.itch.io/animated-pixel-hero
@@ -34,7 +32,7 @@
 * Terreng: Kasper
 * Fiende: Elias
 * Git-ansvarlig / kundekontakt: Bastian
-* Upgrades og poeng: 
+* Upgrades og poeng: Alle
 
 
 
@@ -50,8 +48,8 @@
     * Spilleren beveger seg oppover ved å hoppe, og nedover ved å falle, retningene skal automatisk justeres for hvor du befinner deg rundt planeten.
 * Fiender som beveger seg mot karakteren og er skadelige ved berøring
 * Spilleren kan samle poeng ved å plukke opp ting.
-* Spilleren kan utvide arsenalet ved å plukke opp "upgrades" i formen av f.eks. en grappling hook, jet pack osv...
-* Utfordringen blir å holde seg på planetene uten å falle ut i verdensrommet, løpe fra fiender som jager deg fra planet til planet og ungå farlige terreng.
+* Spilleren kan utvide arsenalet ved å plukke opp en "upgrade" i formen av en powercell.
+* Utfordringen blir å holde seg på planetene og månene uten å falle ut i verdensrommet, løpe fra fiender som jager deg og finne en portal hjem!
 
 Reffererer til:
 * Det blir litt av en blanding mellom Metroid Dread og Super mario oddesey's sin "Moon Kingdom" 2D-section
