@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class MovingSphere extends Sphere{
 	private ArrayList<Point> points;
-	private Point target;
 	private int i = 0;
 	private double dx;
 	private double dy;
@@ -13,7 +12,6 @@ public class MovingSphere extends Sphere{
 	public MovingSphere(double x, double y, double r, ArrayList<Point> points) {
 		super(x, y, r, 2);
 		this.points = points;
-		target = points.get(0);
 	}
 	@Override
 	public void move() {
