@@ -38,7 +38,6 @@ public class MovementTest {
 		Player player = new Player(0,0);
 		
 		double prevX = player.getX();
-		double prevY = player.getY();
 		
 		//if playerstate should start off idle
 		assertTrue(player.getMovementState() == PlayerMovementState.idle);

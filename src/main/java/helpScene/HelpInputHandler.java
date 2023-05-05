@@ -2,7 +2,6 @@ package helpScene;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import player.Player;
 
 public class HelpInputHandler {

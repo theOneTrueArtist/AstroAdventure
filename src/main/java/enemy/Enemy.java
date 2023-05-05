@@ -11,7 +11,6 @@ public class Enemy extends GameActor{
 
 	private double runSpeed;
 	private SphereHitBox hb;
-	private Image sprite;
 	
 	private Player target; 
 	private EnemyState state = EnemyState.run;
@@ -25,7 +24,6 @@ public class Enemy extends GameActor{
 		this.h = 100;
 		this.hb = new SphereHitBox(this, this.h);
 		this.runSpeed = 6;
-		this.sprite = EnemyAnimation.getSprite(state,this.frameCount);
 	}
 
 	public void setTarget(Player p){
