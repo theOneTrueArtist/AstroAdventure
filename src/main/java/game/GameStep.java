@@ -4,10 +4,10 @@ import collision.CircleCollision;
 import enemy.Enemy;
 import gravity.SphereGravity;
 import levels.Level;
-import objects.*;
+import objects.AbstractPowerUp;
+import objects.GameActor;
+import objects.IGameObject;
 import player.Player;
-import player.PlayerStats;
-import victoryScene.VictoryScene;
 
 import java.util.ArrayList;
 

@@ -3,7 +3,6 @@ package gravity;
 import collision.SphereHitBox;
 import javafx.scene.image.Image;
 import objects.AbstractObject;
-import objects.IGameObject;
 
 public class GravityField extends AbstractObject{
 	private double mag;
