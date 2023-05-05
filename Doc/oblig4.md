@@ -152,7 +152,7 @@ Vi hadde en bug der det å trykke på start knappen på start skjermen crashet s
 
   8. Spiller kan dø
   
-    * Som spiller ønsker jeg at det skal være mulig å tappe spillet ved at spiller dør, slik at det er en utfordring å spille.
+    * Som spiller ønsker jeg at det skal være mulig å tape spillet ved at spiller dør, slik at det er en utfordring å spille.
     
     *  Akseptansekriterier:
         * Gitt at spiller kan dø så vil spillet være over og bli resetet tilbake til en tidligere fase.
@@ -162,7 +162,7 @@ Vi hadde en bug der det å trykke på start knappen på start skjermen crashet s
 
   9. Mål for å vinne.
 
-    * Alle spill trenger en måte å "vinne", og forskjellige spill har forskjellige vinn betingelser.
+    * Som spiller ønsker jeg at det skal være en måte å vinne, slik at det er et naturlig slutt-punkt for spillet utenom å dø. Spill har forskjellige vinn betingelser.
 
     * Akseptansekriterier:
         * Gitt vinn-betingelsen er truffet skal spillet stoppe og vise at du har vunnet.
@@ -172,20 +172,20 @@ Vi hadde en bug der det å trykke på start knappen på start skjermen crashet s
 
   10. Objekt-fabrikk.
 
-    * Som utvikler har vi lyst til å kunne enkelt opprette levler.
+    * Som utvikler har vi lyst til å kunne enkelt opprette levler slik at level design kan gjøres enklere.
 
     * Akseptansekriterier:
-        * Måtte kunne generere ett level basert på innholdet til et text-dokument.
+        * Gitt at koden kan ta inn et tekst dokument med funksjonsverdier skal den lage ett level med de gitte veridene fra tekst dokumentet.
 
     * Arbeidsoppgaver:
-        * Opprette fabrikken som kan ta inn enkle verdier fra teskt dokumentet og fylle inn resten av informasjonen som trengs for at spillet skal fungere.
+        * Opprette fabrikken som kan ta inn enkle verdier fra teskt dokumentet, og setter dem inn i relevante funksjoner. og fyller inn resten av informasjonen som trengs for at spillet skal fungere.
 
   11. Start-skjerm.
 
-      * Alle spill har en start skjerm som lar deg ihvertfall enten starte eller lukke spillet.
+      * Som spiller har jeg lyst til å ha en start-skjerm slik at den viser oversiktlig navnet på spillet og en måte å starte spillet.
 
     * Akseptansekriterier:
-        * En skjerm som dukker opp før du spiller som viser tittel og lar deg starte spillet.
+        * Gitt at spillet åpnes skal spillet vise en meny-skjerm som viser tittel og en måte å starte selve spillet på.
 
     * Arbeidsoppgaver:
         * Legge til denne skjermen før spillet starter.
