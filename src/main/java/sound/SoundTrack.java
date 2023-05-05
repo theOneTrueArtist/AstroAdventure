@@ -26,7 +26,7 @@ public class SoundTrack {
                 mediaPlayer = new MediaPlayer(sound);
 
             } else {
-                System.out.println("Cant find file");
+                System.out.println("Can't find file");
             }
 
         } catch(Exception e){
