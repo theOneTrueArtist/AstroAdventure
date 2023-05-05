@@ -4,6 +4,12 @@ public enum PlayerActionState {
 	attack1, attack2, attack3,
 	air_attack1, air_attack2,air_attack3,
 	dead;
+
+	/**
+	 * function that returns a action state for the player.
+	 * @param player
+	 * @return A PlayerActionState
+	 */
 	public static PlayerActionState getState(Player player) {
 		if (!player.isAlive()) {
 			return dead;
@@ -19,6 +25,12 @@ public enum PlayerActionState {
 		}
 		return null;
 	}
+
+	/**
+	 * function that finds what state to transition to after a state is completed
+	 * @param player
+	 * @return new PlayerActionState
+	 */
 	
 	static PlayerActionState transitionToState(Player player) {
 		switch(player.actionState) {
@@ -56,6 +68,12 @@ public enum PlayerActionState {
 		}
 		return null;
 	}
+
+	/***
+	 * checks wheter a actionstate is over.
+	 * @param player
+	 * @return boolean, false if state is not over true otherwise.
+	 */
 	
 	public boolean isOver(Player player) {
 		switch(this) {

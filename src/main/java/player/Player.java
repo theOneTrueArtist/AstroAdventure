@@ -115,17 +115,31 @@ public class Player extends GameActor{
 			break;
 		}
 	}
-	
+	/**
+	 * set character moves left value
+	 * @param move
+	 */
 	public void moveLeft(boolean move) {
 		this.moveLeft = move;
 	}
+	/**
+	 * set character moves right value
+	 * @param move
+	 */
 	public void moveRight(boolean move) {
 		this.moveRight = move;
 	}
+	/**
+	 * set character shift value
+	 * @param move
+	 */
 	public void setShift(boolean shift) {
 		this.shift = shift;
 	}
-	
+	/**
+	 * get if player is running if player is grounded and moving left exclusive or moving right
+	 * @param move
+	 */
 	public boolean isRunning() {
 		return this.grounded && (this.moveLeft ^ this.moveRight);
 	}
@@ -134,7 +148,10 @@ public class Player extends GameActor{
 	public SphereHitBox getHitBox() {
 		return this.hb;
 	}
-	
+	/**
+	 * a jumping force is applied to the player
+	 * @param b
+	 */
 	public void jumping(boolean b) {
 		if (!b) {
 			this.jumpTime = 0;
@@ -150,34 +167,58 @@ public class Player extends GameActor{
 		}
 	}
 
+	/**
+	 * check if player is jumping
+	 * @return
+	 */
 	public boolean isjumping() {
 		return jumpTime != 0;
 	}
-	
+	/**
+	 * check if player is crouching
+	 * @return
+	 */
 	public boolean isCrouching() {
 		return this.shift && this.grounded;
 	}
-	
+
+	/**
+	 * check if player is attacking
+	 * @return
+	 */
 	public boolean isAttacking() {
 		return this.attack;
 	}
-	
+
+	/**
+	 * check if player is sliding, true if player is shift and grounded and running, false otherwise
+	 * @return
+	 */
 	public boolean isSliding() {
 		return this.shift && this.grounded && this.isRunning();
 	}
-	
+
+	/**
+	 * gets players current movment state
+	 * @return active PlayerMovementState
+	 */
 	public PlayerMovementState getMovementState() {
 		return this.movementState;
 	}
 
+	/**
+	 * start a attack
+	 * @param b
+	 */
 	public void initAttack(boolean b) {
 		this.attack = b;
 	}
 
-	public boolean isOverlapping(SphereHitBox other) {
-		return getHitBox().intersects(other);
-	}
 
+	/**
+	 * apply the effects of powerup object to the players stats product wise
+	 * @param obj
+	 */
 	public void givePowerUp(AbstractPowerUp obj) {
 		this.activePowerCell = true;
 		this.runSpeed *= obj.productSpeed();
@@ -186,15 +227,25 @@ public class Player extends GameActor{
 		this.air *= obj.productAir();
 		this.hp *= obj.productHealth();
 	}
-	
+
+	/**
+	 * gets players current air levels
+	 * @return
+	 */
 	public int getAirSupply() {
 		return this.air;
 	}
+	/**
+	 * checks if player is alive, true if hp and air is greater then 0 false otherwise
+	 */
 	@Override
 	public boolean isAlive() {
 		return this.hp > 0 && this.air > 0;
 	}
 
+	/**
+	 * players health is decreased by damage
+	 */
 	public void takeDamage() {
 		if (this.invFrames == 0) {
 			this.invFrames = 50;
@@ -202,7 +253,12 @@ public class Player extends GameActor{
 		}
 				
 	}
+	/**
+	 * set players air level
+	 * @param air
+	 */
 	public void setAirSupply(int air) {
 		this.air = air;
 	}
 }
+

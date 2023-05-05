@@ -13,9 +13,7 @@ public class HelpInputHandler {
 	public HelpInputHandler(Player player,HelpScene scene) {
 		this.player = player;
 		this.scene = scene;
-		
 	}
-
 
 	public void keyReleased(KeyEvent evt) {
 		KeyCode key = evt.getCode();  // keyboard code for the pressed key
@@ -67,12 +65,5 @@ public class HelpInputHandler {
         if (key == KeyCode.I) {
         	scene.i = !scene.i;
         }
-	}
-	
-	public void mouseClick(MouseEvent e) {
-		
-		double x = e.getSceneX();
-		double y = e.getSceneY();
-		
 	}
 }

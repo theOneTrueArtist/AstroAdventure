@@ -13,7 +13,12 @@ import objects.IGameObject;
 import player.Player;
 
 public class GameGraphics {
-	
+	/**
+	 * draws an object on the screen based on where object is in respect to the player
+	 * @param context
+	 * @param player
+	 * @param obj
+	 */
 	private static void cameraView(GraphicsContext context, Player player, IGameObject obj) {
 		double playerPosX = 500;
 		double playerPosY = 300;
@@ -29,7 +34,12 @@ public class GameGraphics {
 		}
 		context.restore();
 	}
-
+	/**
+	 * draws the level and players positions and sprites
+	 * @param canvas
+	 * @param player
+	 * @param level
+	 */
 	public static void drawScreen(Canvas canvas,Player player, Level level) {
 		GraphicsContext context = canvas.getGraphicsContext2D();
 		context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
@@ -80,6 +90,13 @@ public class GameGraphics {
 		
 		
 	}
+
+	/**
+	 * draws the hud elements
+	 * @param canvas
+	 * @param player
+	 * @param game
+	 */
 
 	public static void drawHud(Canvas canvas, Player player, Game game) {
 		GraphicsContext context = canvas.getGraphicsContext2D();

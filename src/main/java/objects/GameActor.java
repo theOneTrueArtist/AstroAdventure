@@ -10,19 +10,32 @@ public abstract class GameActor extends AbstractObject{
 	protected SphereGravity gravity;
 	
 	protected int frameCount = 0;
-	
+
+	/**
+	 * moves object in a horizontal direction based on actor direction, vel distance.
+	 * @param vel
+	 */
 	public void moveHorizontal(double vel) {
 		double r = this.deg*Math.PI/180;
 		this.dx += Math.cos(r) * vel;
 		this.dy += Math.sin(r) * vel;
 	}
-	
+
+	/**
+	 * moves object in a vertical direction based on actor direction, vel distance.
+	 * @param vel
+	 */
 	public void moveVertical(double vel) {
 		double r = (this.deg + 90)*Math.PI/180;
 		this.dx += Math.cos(r) * vel;
 		this.dy += Math.sin(r) * vel;
-	}	
-	
+	}
+
+	/**
+	 * moves object in a direction r, vel distance.
+	 * @param vel
+	 * @param r
+	 */
 	public void moveInDir(double vel, double r) {
 		double r1 = (r + 90)*Math.PI/180;
 		this.dx += Math.cos(r1) * vel;
@@ -82,28 +95,55 @@ public abstract class GameActor extends AbstractObject{
 	public double getDY() {
 		return this.dy;
 	}
-		
+
+	/**
+	 * checks if actor is standing
+	 * @return
+	 */
 	public boolean isGrounded() {
 		return this.grounded;
 	}
-	
+
+	/**
+	 * sets gravity to effect actor
+	 * @param gravity
+	 */
 	public void setGravity(SphereGravity gravity) {
 		this.gravity = gravity;
 	}
-	
+
+	/**
+	 * sets if actor is standing
+	 * @param grounded
+	 */
+
 	public void setGrounded(boolean grounded) {
 		this.grounded = grounded;
 	}
-	
+
+	/**
+	 * moves a actor to a given x and y
+	 * @param x
+	 * @param y
+	 */
+
 	public void moveTo(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
-	
+
+	/**
+	 * gets the frame actor is on
+	 * @return
+	 */
 	public int getFrameCount() {
 		return this.frameCount;
 	}
-	
+
+	/**
+	 * sets the frame the actor is on
+	 * @param frame
+	 */
 	public void setFrameCount(int frame) {
 		this.frameCount = frame;
 	}	

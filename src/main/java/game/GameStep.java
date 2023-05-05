@@ -14,6 +14,13 @@ import java.util.ArrayList;
 
 public class GameStep {
 
+	/**
+	 * steps the state of player and objects in level
+	 * @param game
+	 * @param player
+	 * @param level
+	 */
+
 	public static void step(Game game, Player player, Level level) {
 		//set gravity
 		player.setGravity(null);

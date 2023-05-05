@@ -8,7 +8,11 @@ import player.Player;
 import player.PlayerMovementState;
 
 public class MovementTest {
-	
+
+	/**
+	 * tests that player is idle when not actioned
+	 */
+
 	@Test
 	void testPlayerIdleMovement(){
 		Player player = new Player(0,0);
@@ -25,7 +29,10 @@ public class MovementTest {
 		
 		assertTrue(prevX == player.getX() && prevY == player.getY());
 	}
-	
+
+	/**
+	 * tests that player moves when running
+	 */
 	@Test
 	void testPlayerRunMovement(){
 		Player player = new Player(0,0);
@@ -35,7 +42,8 @@ public class MovementTest {
 		
 		//if playerstate should start off idle
 		assertTrue(player.getMovementState() == PlayerMovementState.idle);
-		
+
+
 		player.moveLeft(true);
 		player.setGrounded(true);
 		

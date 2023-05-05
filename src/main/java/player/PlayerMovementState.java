@@ -4,7 +4,12 @@ public enum PlayerMovementState {
 	idle, 
 	run, jump, fall,  
 	crouch, slide;
-	
+
+	/**
+	 * function that returns a movement state for the player.
+	 * @param player
+	 * @return A PlayerMovementState
+	 */
 	public static PlayerMovementState getState(Player player) {
 		if (player.actionState == null)
 			player.setFrameCount(0);
@@ -33,6 +38,12 @@ public enum PlayerMovementState {
 		
 		return idle;
 	}
+
+	/**
+	 * function that finds what state to transition to after a state is completed
+	 * @param player
+	 * @return new PlayerMovementState
+	 */
 	static PlayerMovementState transitionToState(Player player) {
 		switch(player.getMovementState()) {
 		default:
@@ -40,6 +51,11 @@ public enum PlayerMovementState {
 		}
 		return null;
 	}
+	/***
+	 * checks wheter a movementstate is over.
+	 * @param player
+	 * @return boolean, false if state is not over true otherwise.
+	 */
 	public boolean isOver(Player player) {
 		switch(this) {
 		case idle:

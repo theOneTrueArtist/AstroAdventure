@@ -5,6 +5,13 @@ import javafx.scene.image.Image;
 
 public class PlayerAnimation {
 
+	/***
+	 * gets a sprite based on what frame and movement action is active
+	 * @param state
+	 * @param frame
+	 * @return Image that represents a sprite
+	 */
+
 	public static Image getSprite(PlayerMovementState state,int frame) {
 		switch (state) {
 			case jump:
@@ -23,7 +30,12 @@ public class PlayerAnimation {
 				return ImageLoader.getImage("/sprites/character/idle/adventurer-idle-0"+frame/8 %4+".png");
 		}
 	}
-	
+	/***
+	 * gets a sprite based on what frame and action is active
+	 * @param state
+	 * @param frame
+	 * @return Image that represents a sprite
+	 */
 	public static Image getSprite(PlayerActionState state,int frame) {
 		switch (state) {
 			case dead:

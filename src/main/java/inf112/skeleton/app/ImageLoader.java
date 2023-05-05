@@ -14,6 +14,11 @@ import java.util.Map;
 
 
 public class ImageLoader {
+	/**
+	 * loads image into dictionary to keep it in memory
+	 * @param fileName
+	 * @return image
+	 */
 	private final static Map<String, Image> images = new HashMap<>();
 	private final static List<String> imagePath = Arrays.asList("", "images/");
 

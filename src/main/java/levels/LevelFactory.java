@@ -14,7 +14,13 @@ import java.util.Scanner;
 public final class LevelFactory {
 	
 	private LevelFactory() {};
-	
+	/**
+	 * generates a Level object based on a txt file
+	 *
+	 * @param filename
+	 * @return Level object
+	 */
+
 	public static Level produce (String filename) {
 		
 		Level level = new Level();

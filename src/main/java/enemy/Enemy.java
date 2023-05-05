@@ -16,7 +16,7 @@ public class Enemy extends GameActor{
 	private Player target; 
 	private EnemyState state = EnemyState.run;
 
-	//testing ikkje viktig
+
 	public Enemy(double x, double y) {
 		this.x = x;
 		this.y = y;
@@ -34,8 +34,7 @@ public class Enemy extends GameActor{
 
 	@Override
 	public Image getSprite() {
-		//old method:
-		//return ImageLoader.getImage("/sprites/character/idle/adventurer-idle-00.png");
+
 		this.frameCount ++;
 		return EnemyAnimation.getSprite(state,this.frameCount);
 	}

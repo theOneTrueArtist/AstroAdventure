@@ -4,8 +4,13 @@ import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
 public class EnemyAnimation {
-    
-    
+
+    /**
+     * gets a sprite image for the enemy given
+     * @param state
+     * @param frame
+     * @return image sprite
+     */
     public static Image getSprite(EnemyState state,int frame) {
         switch (state) {
             case jump:

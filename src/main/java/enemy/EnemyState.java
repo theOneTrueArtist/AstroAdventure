@@ -2,6 +2,12 @@ package enemy;
 
 public enum EnemyState {
 	idle, run, jump, fall, dead, crouch, slide;
+
+	/**
+	 * gets a new state based on enemy action
+	 * @param enemy
+	 * @return EnemyState
+	 */
 	
 	public static EnemyState getState(Enemy enemy) {
 		enemy.setFrameCount(0);
@@ -22,6 +28,12 @@ public enum EnemyState {
 		
 		return idle;
 	}
+
+	/**
+	 * cheeks if the current state is done
+	 * @param enemy
+	 * @return true if state is over false otherwise
+	 */
 	public boolean isOver(Enemy enemy) {
 		switch(this) {
 		case idle:
