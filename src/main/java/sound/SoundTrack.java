@@ -43,6 +43,9 @@ public class SoundTrack {
         mediaPlayer.stop();
     }
 
+    public void pause(){
+        mediaPlayer.pause();;
+    }
 
     public void loop(){
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);

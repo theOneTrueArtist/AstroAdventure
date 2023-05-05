@@ -23,7 +23,6 @@ import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 import scenes.IScene;
 import scenes.StartScene;
-import sound.SoundTrack;
 
 public class App extends Application {
 	private AnimationTimer timer;
@@ -32,7 +31,6 @@ public class App extends Application {
 	private long timeBudget = nanosPerStep;
 	private long lastUpdateTime = 0L;
 	private Scene scene;
-	private SoundTrack music;
 	
 	private IScene gameScene;
 
@@ -81,8 +79,7 @@ public class App extends Application {
 		timer.start();
 //		stage.setFullScreen(true);
 		stage.show();
-		music = new SoundTrack();
-		music.play();
+
 
 	}
 
