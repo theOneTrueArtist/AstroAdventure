@@ -17,10 +17,14 @@ public class App extends Application {
 	private long timeBudget = nanosPerStep;
 	private long lastUpdateTime = 0L;
 	private Scene scene;
+	private int stepCount = 0;
 	
 	private IScene gameScene;
 
-
+	/**
+	 * Starts the game.
+	 * @param args
+	 */
 	public static void startIt(String[] args) {
 		launch(args);
 	}
@@ -43,15 +47,12 @@ public class App extends Application {
 
 			@Override
 			public void handle(long now) {
-				// System.out.println("Elapsed: " + (now -
-				// lastUpdateTime)/(double)millisPerStep);
 				if (lastUpdateTime > 0) {
 					timeBudget = Math.min(timeBudget + (now - lastUpdateTime), 10 * nanosPerStep);
 				}
 				lastUpdateTime = now;
 
 				while (timeBudget >= nanosPerStep) {
-					// System.out.println("Budget: " + timeBudget);
 					timeBudget = timeBudget - nanosPerStep;
 					step();
 				}
@@ -60,21 +61,20 @@ public class App extends Application {
 
 		};
 		root.getChildren().add(canvas);
-
-		// canvas.setEffect(new BoxBlur());
 		timer.start();
-//		stage.setFullScreen(true);
 		stage.show();
-
-
 	}
 
+	/**
+	 * Sets the gamescene to a new startmenu.
+	 */
 	private void setup() {
 		gameScene = new StartScene(this);
 	}
-	
-	private int stepCount = 0;
 
+	/**
+	 * Step is the internal timer off the game
+	 */
 	protected void step() {
 		if (gameScene.isOver()) {
 			gameScene = gameScene.transitionTo();
@@ -84,9 +84,16 @@ public class App extends Application {
 		stepCount++;
 	}
 
+	/**
+	 * Draws on the screen
+	 */
 	protected void draw() {
 		gameScene.draw(canvas);	
 	}
+
+	/**
+	 * Gets scene.
+	 */
 	public Scene getScene() {
 		return scene;
 	}

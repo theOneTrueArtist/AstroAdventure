@@ -4,6 +4,9 @@ import collision.SphereHitBox;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
+/**
+ * Represents the endportal. This is the win-condtion.
+ */
 public class EndPortal extends AbstractObject {
 
     int frameCount = 0;

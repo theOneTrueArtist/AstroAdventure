@@ -1,5 +1,8 @@
 package player;
 
+/**
+ * The stats of the player.
+ */
 public class PlayerStats {
 	protected static double Hp = 100; 
 	protected static double walkSpeed = 10;

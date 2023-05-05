@@ -4,6 +4,10 @@ import collision.SphereHitBox;
 import javafx.scene.image.Image;
 import objects.IGameObject;
 
+
+/**
+ * This class represents the gravity sphere shown as blue atmossphere in the game.
+ */
 public class SphereGravity implements IGameObject{
 	double x, y, r;
 	SphereHitBox hb;

@@ -11,6 +11,10 @@ import javafx.scene.text.Font;
 import scenes.IScene;
 import scenes.StartScene;
 
+
+/**
+ * Represents the scene shown when win-condtion has been met. Victory screen.
+ */
 public class VictoryScene implements IScene {
 
     private App app;

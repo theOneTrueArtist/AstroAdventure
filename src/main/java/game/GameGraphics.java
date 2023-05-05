@@ -12,6 +12,11 @@ import objects.GameActor;
 import objects.IGameObject;
 import player.Player;
 
+
+
+/**
+ * Gets the games graphics: sprites, background etc. And places them in the right place.
+ */
 public class GameGraphics {
 	/**
 	 * draws an object on the screen based on where object is in respect to the player

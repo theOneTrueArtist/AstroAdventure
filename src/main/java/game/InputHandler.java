@@ -6,6 +6,9 @@ import javafx.scene.input.KeyEvent;
 import player.Player;
 import sound.SoundTrack;
 
+/**
+ * Takes in key inputs during active gameplay, allows for interaction and movement etc.
+ */
 public class InputHandler {
 	Player player;
 	SoundTrack music;
@@ -32,7 +35,7 @@ public class InputHandler {
 	        	player.setShift(false);
 	       }
 		   if (key == KeyCode.M) { //Sets the "M" key as a pause/unpause button for music.
-			if(muted == false){
+			if(muted == false){ 	//It takes into consideration wheter music is already muted or still playing, swithing between.
 				music.pause();
 				muted = true;
 			} else{

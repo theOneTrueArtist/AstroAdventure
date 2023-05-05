@@ -4,6 +4,9 @@ import collision.SphereHitBox;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
+/**
+ * Represents the planets and the moons the player walks on.
+ */
 public class Sphere extends AbstractObject{
 	
 	int planet_type;

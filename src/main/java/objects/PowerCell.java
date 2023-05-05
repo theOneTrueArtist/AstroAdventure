@@ -4,6 +4,9 @@ import collision.SphereHitBox;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
+/**
+ * Represents the powerup: Powercell. Part of the powerups.
+ */
 public class PowerCell extends AbstractPowerUp {
 
     public PowerCell(double x, double y, double degree) {

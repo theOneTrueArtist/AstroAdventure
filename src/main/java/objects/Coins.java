@@ -4,6 +4,9 @@ import collision.SphereHitBox;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
+/*
+ * Represents the collectible coins found in the game.
+ */
 public class Coins extends AbstractObject {
 
     public Coins(double x, double y, double degree) {

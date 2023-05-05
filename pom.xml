@@ -25,6 +25,7 @@
 
 	<dependencies>
 
+		<!-- This dependency is for javafx.controls-->
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
@@ -32,7 +33,7 @@
 		</dependency>
 
 
-
+		<!-- This dependency is for javafx.media, allows for music to be played etc.-->
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-media</artifactId>

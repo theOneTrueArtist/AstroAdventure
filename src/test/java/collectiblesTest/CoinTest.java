@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import collision.CircleCollision;
 import player.Player;
 
-
+/**
+ * Tests or coins.
+ */
 public class CoinTest {
 
     /**

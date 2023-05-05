@@ -3,6 +3,7 @@ package player;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
+/** Contains the animations for the sprite for the player. */
 public class PlayerAnimation {
 
 	/***

@@ -4,6 +4,9 @@ import collision.SphereHitBox;
 import inf112.skeleton.app.ImageLoader;
 import javafx.scene.image.Image;
 
+/**
+ * Represents the background elements. Like the background image.
+ */
 public class BackgroundElements extends AbstractObject{
 
     String sprite;

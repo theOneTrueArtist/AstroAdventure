@@ -7,6 +7,10 @@ import org.junit.jupiter.api.Test;
 import player.Player;
 import player.PlayerMovementState;
 
+
+/**
+ * Tests where states register, change and influences the game correctly.
+ */
 public class StateTest {
 	/**
 	 * tests player runstate turns on when prompted

@@ -7,6 +7,7 @@ import collision.CircleCollision;
 import player.Player;
 
 
+/** Tests the portal. */
 public class PortalTest {
     /**
      * Tests the collision between the player and portals.

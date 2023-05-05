@@ -11,6 +11,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
+
+/**
+ * Represents the startmenu, shows title, and leads to tutorial and game.
+ */
 public class StartScene implements IScene{
 	private App app;
 	private boolean cont;

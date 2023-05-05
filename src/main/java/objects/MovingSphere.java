@@ -2,7 +2,9 @@ package objects;
 
 import java.util.ArrayList;
 
-
+/**
+ * Represents the moving planets and moons that the player can walk on.
+ */
 public class MovingSphere extends Sphere{
 	private ArrayList<Point> points;
 	private int i = 0;

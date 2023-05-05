@@ -14,6 +14,10 @@ import player.Player;
 import scenes.IScene;
 import scenes.StartScene;
 
+
+/**
+ * The Help Scene class represents the tutorial, in the tutorial you can learn about how to play the game.
+ */
 public class HelpScene implements IScene{
 	private App app;
 	private HelpInputHandler inputHandler;
@@ -48,6 +52,13 @@ public class HelpScene implements IScene{
 		}
 		player.setAirSupply(20);
 	}
+
+	/**
+	 * Moves camera in tutorial
+	 * @param context the graphics context
+	 * @param player The player, which the camera follows.
+	 * @param obj	gameobject shown in tutorial. Currently a tree.
+	 */
 	private static void cameraView(GraphicsContext context, Player player, IGameObject obj) {
 		double playerPosX = 500;
 		double playerPosY = 300;

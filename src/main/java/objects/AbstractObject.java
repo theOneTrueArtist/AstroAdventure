@@ -15,30 +15,37 @@ public abstract class AbstractObject implements IGameObject{
 	
 	protected SphereHitBox hb;
 	
+	@Override
 	public double getX() {
 		return this.x;
 	}
-	
+
+	@Override
 	public double getY() {
 		return this.y;
 	}
 	
+	@Override
 	public double getWidth() {
 		return this.w;
 	}
 	
+	@Override
 	public double getHeight() {
 		return this.h;
 	}
 	
+	@Override
 	public double getDeg() {
 		return this.deg;
 	}
 	
+	@Override
 	public int getDirection() {
 		return this.direction;
 	}
 
+	@Override
 	public SphereHitBox getHitBox() {
 		return this.hb;
 	}

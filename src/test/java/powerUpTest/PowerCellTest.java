@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import collision.CircleCollision;
 import player.Player;
 
+/** Tests the powercell powerup */
 public class PowerCellTest {
     /**
      * Tests the collision between the player and power ups.

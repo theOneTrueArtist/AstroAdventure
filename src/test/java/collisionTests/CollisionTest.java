@@ -8,7 +8,9 @@ import collision.CircleCollision;
 import collision.SphereHitBox;
 import player.Player;
 
-
+/**
+ * Tests for collion.
+ */
 public class CollisionTest {
 	/**
 	 * tests the collsion with self

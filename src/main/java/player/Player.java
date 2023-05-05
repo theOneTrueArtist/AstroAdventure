@@ -6,6 +6,8 @@ import javafx.scene.image.Image;
 import objects.AbstractPowerUp;
 import objects.GameActor;
 
+
+/** Represents the player, contains all relevant information about the player and their state. */
 public class Player extends GameActor{
 
 	private double runSpeed = PlayerStats.runSpeed;

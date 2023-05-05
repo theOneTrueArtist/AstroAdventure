@@ -9,6 +9,10 @@ import scenes.IScene;
 import sound.SoundTrack;
 import victoryScene.VictoryScene;
 
+
+/**
+ * This class ties represents the game itself.
+ */
 public class Game implements IScene{
 	private SoundTrack music;
 	private Player player = new Player(100,300);
