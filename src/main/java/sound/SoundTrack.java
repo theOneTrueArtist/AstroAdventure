@@ -1,52 +1,52 @@
 package sound;
 
-//import javafx.scene.media.AudioClip;
-//import javafx.scene.media.Media;
-//import javafx.scene.media.MediaPlayer;
+import java.io.File;
+
+
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
 public class SoundTrack {
 
-    //private MediaPlayer mediaPlayer;
-    //private Clip clip;
+    private String songFile = "src/main/resources/pl4y1ng.mp3";
+    private MediaPlayer mediaPlayer;
 
-    public SoundTrack(String audioFile) {
-        //Media sound = new Media(getClass().getResource(("") + audioFile.toString()));
-        //mediaPlayer = new MediaPlayer(sound);
+    public SoundTrack() {
 
-/*
-        URL url = getClass().getResource(("") + audioFile);
-        AudioInputStream audioInputStream = audioSystem.getaudioInputStream(url);
-        clip = Audiosyste.getClip();
-        clip.open(audioInputStream);
+        
+        try{
+            File musicPath = new File(songFile);
 
- */
+            String sl = musicPath.toURI().toString();
+            if(sl != null){
 
+                Media sound = new Media(sl);
+                mediaPlayer = new MediaPlayer(sound);
+
+            } else {
+                System.out.println("Cant find file");
+            }
+
+        } catch(Exception e){
+            System.out.println("ERROR: Something is wrong with the Sound track");
+            System.out.println(e);
         }
-    {
-
-    }   /* A block of code that can take inn a audio file, need to find a fitting sound, second one uses
-     javax. This was wrong use same format as the application.
-    */ 
-
+        }
 
     public void play(){
-        //mediaPlayer.play();
-        /*if (clip != null && !clip.isRunning()) {
-            clip.start();
-            }*/
-        }
-        public void stop() {
-        //mediaPlayer.stop();
-        /*
-        if (clip != null) {
-            clip.loop(Clip.LOOP_CONTINUOUSLY);
-         */
+        mediaPlayer.play();
         }
 
-        public void loop(){
-        //mediaPlayer.setCycleCount(mediaPlayer.indefinite);
-        //mediaPlayer.paly();
+    public void stop() {
+        mediaPlayer.stop();
+    }
+
+
+    public void loop(){
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        mediaPlayer.play();
     }
 
 }
