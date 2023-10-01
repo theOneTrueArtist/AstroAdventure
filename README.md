@@ -1,6 +1,6 @@
 # INF112 Project – *Astro Adventure*
 
-![astroadventure](/uploads/67b889b21f344f7461e1ec731274a75b/astroadventure_title.png)
+![astroadventure](/src/main/resources/astroadventure_title.png)
 
 * Team: *Java Junkies* (Gruppe 1): *Snorre Haland, Kasper Treborg , Bastian Sunde, Elias Aronsen*
 * Trello Link: https://trello.com/invite/b/f9N23lGE/ATTIe6bde57c79ea9dd4b28bf7a10b2c4b325186A05D/inf112
